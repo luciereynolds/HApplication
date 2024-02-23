@@ -26,7 +26,8 @@ export default function SortableItem(props) {
     listeners,
     setNodeRef,
     transform,
-    transition
+    transition,
+    isDragging
   } = useSortable({ id: props.id });
 
   const style = {
@@ -34,9 +35,21 @@ export default function SortableItem(props) {
     transition
   };
 
+  const overlayStyle = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    borderRadius: "15px",
+    pointerEvents: "none",
+    zIndex: isDragging ? 1 : 0, // Ensure the overlay is above the item when dragging
+  };
+
   return (
-    <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+    <div style={style} ref={setNodeRef} {...attributes} {...listeners}>
       <Item id={props.id} />
+      {isDragging && <div style={overlayStyle}></div>}
     </div>
   );
 }

@@ -68,7 +68,9 @@ const SortableContainer = ({ initialItems }) => {
         <Container id="container1" items={items.container1} />
         <Container id="container2" items={items.container2} />
         <Container id="container3" items={items.container3} />
-        <DragOverlay>{activeId ? <Item id={activeId} /> : null}</DragOverlay>
+        <DragOverlay>
+          {activeId ? <Item id={activeId} /> : null}
+        </DragOverlay>
       </DndContext>
     </div>
   );
@@ -141,10 +143,7 @@ const SortableContainer = ({ initialItems }) => {
       };
     });
   }
-  
-  
-  
-  
+
   function handleDragEnd(event) {
     const { active, over } = event;
   
