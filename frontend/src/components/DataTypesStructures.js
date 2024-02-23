@@ -11,7 +11,11 @@ const DataTypesStructures = () => {
 
   return (
     <div className="container-fluid">
-      <h3 className="text-center">Sort the data into the correct data type! 🤖</h3>
+      <div className="row" style={{ paddingTop: "20px" }}>
+        <div className="col text-center">
+          <h3>Sort the data into the correct data type! 🤖</h3>
+        </div>
+      </div>
       <div className="row">
         <div className="col text-center">
           <p className="instructions">Drag each item to the corresponding category.</p>

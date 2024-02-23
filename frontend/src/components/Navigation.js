@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../images/RocketIcon.png"; // Replace with the actual path to your logo image
 
 const Navigation = () => {
   return (
@@ -13,6 +14,12 @@ const Navigation = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
+          {/* Add the logo to the brand */}
+          <a href="/" className="navbar-brand">
+            <img src={Logo} alt="Logo" style={{ height: "80px", marginRight: "10px" }} />
+          </a>
+
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav mx-auto">
               <a href="/" className="nav-item nav-link active" style={{ color: "white" }}>

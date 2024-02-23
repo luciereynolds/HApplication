@@ -11,11 +11,13 @@ export function Item(props) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border: "1px solid grey",
+    border: "1px solid #254e8f",
     margin: "10px 0",
-    background: "white",
-    borderRadius: "15px"
+    background: "#254e8f",
+    color: "white", 
+    borderRadius: "15px",
   };
+  
 
   return <div style={style}>{id}</div>;
 }
@@ -41,9 +43,10 @@ export default function SortableItem(props) {
     left: 0,
     right: 0,
     bottom: 0,
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
     borderRadius: "15px",
     pointerEvents: "none",
-    zIndex: isDragging ? 1 : 0, // Ensure the overlay is above the item when dragging
+    zIndex: isDragging ? 1 : 0, 
   };
 
   return (
