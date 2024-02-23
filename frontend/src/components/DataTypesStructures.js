@@ -12,7 +12,8 @@ const DataTypesStructures = () => {
 
     return (
         <div className="container-fluid">
-            <h3>Sort the data into the correct data type!</h3>
+            <h3 className="text-center">Sort the data into the correct data type! 🤖</h3>
+            <p className="text-center">Click and drag the data into the correct section.</p>
             <div className="row">
             <div className="col text-center"></div>
             <div className="col text-center"><h5>String</h5></div>

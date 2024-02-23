@@ -11,9 +11,10 @@ export function Item(props) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border: "1px solid black",
+    border: "1px solid grey",
     margin: "10px 0",
-    background: "white"
+    background: "white",
+    borderRadius: "15px"
   };
 
   return <div style={style}>{id}</div>;
