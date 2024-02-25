@@ -1,43 +1,42 @@
-import React from "react";
-import SortableContainer from "./SortableContainer";
+import React, { useState } from "react";
+import SortingLessonDTS from "./SortingLessonDTS";
+import DataTypeLesson from "./DataTypeLesson";
 
-const DataTypesStructures = () => {
-  const initialItems = {
-    root: ['true', '2', 'Hello World!', '01414960999', 'false', '362'],
-    container1: [],
-    container2: [],
-    container3: [],
+const Lessons = () => {
+  const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentLessonIndex((prevIndex) => prevIndex + 1);
+  };
+
+  const handleBack = () => {
+    setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
   return (
-    <div className="container-fluid">
-      <div className="row" style={{ paddingTop: "20px" }}>
-        <div className="col text-center">
-          <h3>Sort the data into the correct data type! 🤖</h3>
-        </div>
+    <div className="container-fluid" style={{ height: "80vh" }}>
+      <div className="row" style={{ paddingTop: "20px", textAlign: "center" }}>
+        <h3>Data Types and Structures 🚀</h3>
       </div>
-      <div className="row">
-        <div className="col text-center">
-          <p className="instructions">Drag each item to the corresponding category.</p>
-        </div>
+      <div className="row" style={{ height: "75vh", overflowY: "auto" }}>
+        {currentLessonIndex === 0 && <DataTypeLesson />}
+        {currentLessonIndex === 1 && <SortingLessonDTS />}
       </div>
-      <div className="row">
-        <div className="col text-center"></div>
-        <div className="col text-center">
-          <h5 className="data-type-heading">String</h5>
+      <div className="row" style={{ marginTop: "10px", marginBottom: "20px", textAlign: "center" }}>
+        <div className="col">
+          <button className="lesson-button" onClick={handleBack} disabled={currentLessonIndex === 0}>
+            Back
+          </button>
         </div>
-        <div className="col text-center">
-          <h5 className="data-type-heading">Integer</h5>
+        <div className="col">
+          <button className="lesson-button" onClick={handleNext} disabled={currentLessonIndex === 1}>
+            Next
+          </button>
         </div>
-        <div className="col text-center">
-          <h5 className="data-type-heading">Boolean</h5>
-        </div>
-      </div>
-      <div className="row">
-        <SortableContainer initialItems={initialItems} />
+        <p></p>
       </div>
     </div>
   );
 };
 
-export default DataTypesStructures;
+export default Lessons;
