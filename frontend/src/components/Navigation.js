@@ -1,11 +1,20 @@
 import React from "react";
-import Logo from "../images/RocketIcon.png"; // Replace with the actual path to your logo image
+import Logo from "../images/RocketIcon.png";
 
 const Navigation = () => {
   return (
-    <div className="container-fluid" style={{ backgroundColor: "#254e8f" }}>
+    <div className="container-fluid">
       <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light py-2 py-lg-0">
+        <nav className="navbar navbar-expand-lg navbar-light py-2 py-lg-0 d-flex align-items-center">
+          <a href="/" className="navbar-brand" style={{ marginTop: "15px"}}>
+            <img
+              src={Logo}
+              alt="Logo"
+              style={{ height: "50px", marginRight: "10px" }}
+            />
+            <span style={{ fontSize: "20px", fontWeight: "bold" }}>ComputingCadets</span>
+          </a>
+
           <button
             type="button"
             className="navbar-toggler ms-auto me-0"
@@ -15,20 +24,15 @@ const Navigation = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          {/* Add the logo to the brand */}
-          <a href="/" className="navbar-brand">
-            <img src={Logo} alt="Logo" style={{ height: "80px", marginRight: "10px" }} />
-          </a>
-
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <div className="navbar-nav mx-auto">
-              <a href="/" className="nav-item nav-link active" style={{ color: "white" }}>
+              <a href="/" className="nav-item nav-link active">
                 Home
               </a>
-              <a href="/lessons" className="nav-item nav-link" style={{ color: "white" }}>
+              <a href="/lessons" className="nav-item nav-link">
                 Lessons
               </a>
-              <a href="/leaderboard" className="nav-item nav-link" style={{ color: "white" }}>
+              <a href="/leaderboard" className="nav-item nav-link">
                 Leaderboard
               </a>
             </div>

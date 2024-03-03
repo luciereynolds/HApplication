@@ -10,7 +10,7 @@
 
 body {
   background-size: 100px 100px;
-  background-color: #ffffff; 
+  background-color: #eeebe6; 
 }
 
 .modalContainer {
@@ -19,13 +19,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.hostel-name-background {
-  background-color: #3d9962;
-  color:rgb(243, 244, 246); 
-  padding: 10px; 
-  border-radius: 4px; 
 }
 
 .button:main,
@@ -40,7 +33,7 @@ body {
 
 .modal-main {
   position: relative;
-  background-color: #fff;
+  background-color: #eeebe6;
   width: 80%;
   min-height: 200px;
   border: 1px solid rgb(179, 179, 179); 
@@ -74,7 +67,7 @@ body {
 .modal-main .footer {
   width: 100%;
   height: 60px;
-  background-color: rgb(243, 244, 246);
+  background-color: #eeebe6;
   position: absolute;
   bottom: 0;
   display: flex;
@@ -184,7 +177,6 @@ body {
   padding: 25px 0;
   color: var(--dark);
   font-weight: 600;
-  text-transform: uppercase;
   outline: none;
 }
 
@@ -216,7 +208,7 @@ body {
 
   .navbar .navbar-nav {
       margin-top: 75px;
-      border-top: 1px solid #EEEEEE;
+      border-top: 1px solid #eeebe6;
   }
 }
 
