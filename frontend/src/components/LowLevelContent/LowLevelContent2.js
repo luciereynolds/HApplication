@@ -2,7 +2,7 @@ import React from "react";
 
 const LowLevelContent2 = () => {
     const tableHeaderStyle = {
-        backgroundColor: "green", // Set the background color to green
+        backgroundColor: "#2eba68", // Set the background color to green
         color: "white", // Set the text color to white for better contrast
     };
 
