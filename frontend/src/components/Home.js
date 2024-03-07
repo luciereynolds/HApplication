@@ -6,7 +6,8 @@ const Home = () => {
     <div className="container-fluid" style={{padding: "50px", paddingTop: "0px"}}>
       <div className="row">
         <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem" }}>
-          <h3>Welcome to the exciting world of National 4 Computer Science!</h3>
+          <br/>
+          <h3><b>Welcome to the exciting world of National 4 Computer Science!</b></h3>
           <br></br>
           <p>
             We understand that National 4 Computer Science can seem like a labyrinth
@@ -23,6 +24,9 @@ const Home = () => {
             So, are you ready to level up your computer science skills? Let the
             adventure begin!
           </p>
+          <button>
+            Get Learning!
+          </button>
         </div>
         <div className="col-md p-3 mx-2 text-dark order-md-last">
           <img

@@ -25,9 +25,16 @@ const Navigation = () => {
               <a href="/" className="nav-item nav-link active" style={{ padding:"0.5rem"}}>
                 Home
               </a>
-              <a href="/lessons" className="nav-item nav-link" style={{ padding:"0.5rem"}}>
-                Lessons
-              </a>
+              <li className="nav-item dropdown">
+                <a href="/lessons" className="nav item nav-link" style={{ padding:"0.5rem"}}>
+                  Lessons
+                </a>
+                <div className="dropdown-menu" aria-labelledby="lessonsDropdown">
+                  <a className="dropdown-item" href="/lessons/DataTypesAndStructures">Data Types and Structures</a>
+                  <a className="dropdown-item" href="/lessons/LowLevelOperation">Low Level Operations and Computing Architecture</a>
+                  <a className="dropdown-item" href="/lessons/TestingAndDocumenting">Testing and Documenting Solutions</a>
+                </div>
+              </li>
               <a href="/leaderboard" className="nav-item nav-link" style={{ padding:"0.5rem"}}>
                 Leaderboard
               </a>
