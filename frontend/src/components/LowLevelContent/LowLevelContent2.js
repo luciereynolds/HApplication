@@ -1,6 +1,11 @@
 import React from "react";
 
 const LowLevelContent2 = () => {
+    const tableHeaderStyle = {
+        backgroundColor: "green", // Set the background color to green
+        color: "white", // Set the text color to white for better contrast
+    };
+
     return (
         <div className="container-fluid">
             <div className="row">
@@ -16,43 +21,43 @@ const LowLevelContent2 = () => {
                     <table className="table table-bordered">
                         <thead>
                             <tr>
-                            <th>128</th>
-                            <th>64</th>
-                            <th>32</th>
-                            <th>16</th>
-                            <th>8</th>
-                            <th>4</th>
-                            <th>2</th>
-                            <th>1</th>
-                            <th> </th>
-                            <th>Decimal Number</th>
+                                <th style={tableHeaderStyle}>128</th>
+                                <th style={tableHeaderStyle}>64</th>
+                                <th style={tableHeaderStyle}>32</th>
+                                <th style={tableHeaderStyle}>16</th>
+                                <th style={tableHeaderStyle}>8</th>
+                                <th style={tableHeaderStyle}>4</th>
+                                <th style={tableHeaderStyle}>2</th>
+                                <th style={tableHeaderStyle}>1</th>
+                                <th style={tableHeaderStyle}> </th>
+                                <th style={tableHeaderStyle}>Decimal Number</th>
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>=</td>
-                            <td>13</td>
-                        </tr>
+                            <tr>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>=</td>
+                                <td>13</td>
+                            </tr>
                         </tbody>
                     </table>
                     <p>So as you can see from the binary table above, the binary representation
-                        for 13 is <b>00001011</b>. If you ignore the 0s and look at where we have 1s, you can see
-                        we have 1s in the <b>8</b>, <b>2</b> and <b>1</b> column. To work out what decimal number we 
+                        for 13 is <b>00001101</b>. If you ignore the 0s and look at where we have 1s, you can see
+                        we have 1s in the <b>8</b>, <b>2</b>, and <b>1</b> column. To work out what decimal number we 
                         are storing we just add these numbers together.
                     </p>
                     <p>
                     So...
                     </p>
                     <h5 style={{textAlign: "center"}}>
-                        00001011 = 8 + 2 + 1 = 13
+                        00001101 = 8 + 2 + 1 = 13
                     </h5>
                 </div>
             </div>

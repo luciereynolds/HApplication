@@ -21,8 +21,8 @@ const Lessons = () => {
   // returns lesson content to be called in SortingLesson
   return (
     <div className="container-fluid" style={{padding: "50px", paddingTop: "0px" }}>
-      <div className="row text-light" style={{ padding: "0.5rem", textAlign: "center", backgroundColor:"#2eba68"}}>
-        <h3>Low Level Operations and Architecture</h3>
+      <div className="row text-light" style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", backgroundColor: "#2eba68", borderRadius: "20px", padding: "1rem" }}>
+        <h3 style={{ margin: 0 }}>Low Level Operations and Architecture</h3>
       </div>
     <div className="row" style={{ height: "75vh", overflowY: "auto"}}>
     {currentLessonIndex === 0 && <LowLevelContent1 />}
