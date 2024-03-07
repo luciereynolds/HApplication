@@ -47,7 +47,15 @@ p {
   margin: 0 15px 10px;
 }
 
+table, td, th {
+  border: 1px solid;
+  text-align: center;
+}
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 .lesson-button {
   background-color: #2eba68;
   color: white;
