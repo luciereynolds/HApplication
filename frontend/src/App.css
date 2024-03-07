@@ -1,18 +1,23 @@
 /* importing custom font from google */
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0.2% 0.2% 0% 0%;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
   background-size: 100px 100px;
-  background-color: #eeebe6; 
+  background-color: #e2e2e2; 
 }
-
+/*
+p {
+  font-family: 'Roboto', sans-serif;
+}
+*/
 .modalContainer {
   height: 100vh;
   display: flex;
@@ -44,7 +49,7 @@ body {
 
 
 .lesson-button {
-  background-color: #4caf50;
+  background-color: #2eba68;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -56,7 +61,7 @@ body {
 }
 
 .lesson-button:hover {
-  background-color: #45a049;
+  background-color: #1f864a;
 }
 
 .lesson-button:disabled {
