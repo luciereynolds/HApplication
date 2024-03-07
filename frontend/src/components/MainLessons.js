@@ -6,7 +6,7 @@ const Lessons = () => {
     <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>
       <div className="row">
         <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem" }}>
-          <h3>Explore our lessons!🚀</h3>
+          <h3 style={{textAlign: "center"}}>Explore our lessons!🚀</h3>
           <br></br>
           <div className="row">
             <div className="col-md">

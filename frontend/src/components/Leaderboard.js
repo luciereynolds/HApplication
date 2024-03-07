@@ -4,7 +4,7 @@ const Leaderboard = () => {
   return (
     <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>
       <div className="row">
-        <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem" }}>
+        <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem", textAlign: "center" }}>
           <h3>Leaderboard 🏆</h3>
           <br></br>
           <div className="row">
