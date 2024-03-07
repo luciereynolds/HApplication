@@ -21,7 +21,7 @@ const Lessons = () => {
                 <p>Discover computing essentials: binary, memory, CPU. Decode low-level operations, explore computer architecture. Unveil tech secrets in a nutshell!</p>
               </a>
             </div>
-            <div className="col-md mx-2">
+            <div className="col-md">
               <a href="/lessons/datatypesandstructures" className="nav-item nav-link">
                 <h4>Testing and Documenting Solutions</h4>
                 <p>Level up coding skills! Learn to test and document like a pro. Make sure your solutions rock and your code tells the story!</p>
