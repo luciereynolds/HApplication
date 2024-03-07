@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SortingLessonDTS from "./SortingLessonDTS";
 import LowLevelContent1 from "./LowLevelContent1";
+import LowLevelContent2 from "./LowLevelContent2";
 
 const Lessons = () => {
   
@@ -25,7 +25,7 @@ const Lessons = () => {
       </div>
     <div className="row" style={{ height: "75vh", overflowY: "auto"}}>
     {currentLessonIndex === 0 && <LowLevelContent1 />}
-    {currentLessonIndex === 1 && <SortingLessonDTS />}
+    {currentLessonIndex === 1 && <LowLevelContent2 />}
     </div>
     <div className="row" style={{textAlign: "center"}}>
       <div className="col">

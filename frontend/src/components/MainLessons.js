@@ -7,7 +7,7 @@ const Lessons = () => {
       <div className="row">
         <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem" }}>
           <h3 style={{textAlign: "center"}}>Explore our lessons!</h3>
-          <p style={{textAlign:"center"}}>Here you can find links to all our lessons. Happy exploring!</p>
+          <p style={{textAlign:"center"}}>Here you can find links to all our lessons. Happy exploring Cadets!</p>
           <br></br>
           <div className="row">
             <div className="col-md mx-2 mb-2 text-light" style={{backgroundColor: "#6a5bcf", borderRadius: "20px", paddingTop: "20px"}}>
