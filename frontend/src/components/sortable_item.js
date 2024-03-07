@@ -11,9 +11,9 @@ export function Item(props) {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    border: "1px solid #254e8f",
+    border: "1px solid #8c7bff",
     margin: "10px 0",
-    background: "#254e8f",
+    background: "#8c7bff",
     color: "white", 
     borderRadius: "15px",
   };
