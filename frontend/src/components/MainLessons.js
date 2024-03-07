@@ -9,19 +9,19 @@ const Lessons = () => {
           <h3 style={{textAlign: "center"}}>Explore our lessons!</h3>
           <br></br>
           <div className="row">
-            <div className="col-md mx-2" style={{backgroundColor: "#8c7bff", borderRadius: "20px", paddingTop: "20px"}}>
+            <div className="col-md mx-2 mb-2" style={{backgroundColor: "#8c7bff", borderRadius: "20px", paddingTop: "20px"}}>
               <a href="/lessons/datatypesandstructures" className="nav-item nav-link">
                 <h4 style={{textAlign: "center"}}>Data Types and Structures</h4>
                 <p>Embark on a coding journey! Discover programming basics with numbers, words, and structures.</p>
               </a>
             </div>
-            <div className="col-md mx-2" style={{backgroundColor: "#4ada85", borderRadius: "20px", paddingTop: "20px"}}>
+            <div className="col-md mx-2 mb-2" style={{backgroundColor: "#4ada85", borderRadius: "20px", paddingTop: "20px"}}>
               <a href="/lessons/datatypesandstructures" className="nav-item nav-link">
                 <h4 style={{textAlign: "center"}}>Low Level Operations and Computing Architecture</h4>
                 <p>Discover computing essentials: binary, memory, CPU. Decode low-level operations, explore computer architecture. Unveil tech secrets in a nutshell!</p>
               </a>
             </div>
-            <div className="col-md mx-2" style={{backgroundColor: "#fda4fe", borderRadius: "20px", paddingTop: "20px"}}>
+            <div className="col-md mx-2 mb-2" style={{backgroundColor: "#fda4fe", borderRadius: "20px", paddingTop: "20px"}}>
               <a href="/lessons/datatypesandstructures" className="nav-item nav-link">
                 <h4 style={{textAlign: "center"}}>Testing and Documenting Solutions</h4>
                 <p>Level up coding skills! Learn to test and document like a pro. Make sure your solutions rock and your code tells the story!</p>
