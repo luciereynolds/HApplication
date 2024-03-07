@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import LowLevelContent1 from "./LowLevelContent1";
-import LowLevelContent2 from "./LowLevelContent2";
+import LowLevelContent1 from "./LowLevelContent/LowLevelContent1";
+import LowLevelContent2 from "./LowLevelContent/LowLevelContent2";
+import LowLevelContent3 from "./LowLevelContent/LowLevelContent3";
 
 const Lessons = () => {
   
@@ -20,12 +21,13 @@ const Lessons = () => {
   // returns lesson content to be called in SortingLesson
   return (
     <div className="container-fluid" style={{padding: "50px", paddingTop: "0px" }}>
-      <div className="row" style={{ padding: "0.5rem", textAlign: "center"}}>
+      <div className="row text-light" style={{ padding: "0.5rem", textAlign: "center", backgroundColor:"#2eba68"}}>
         <h3>Low Level Operations and Architecture</h3>
       </div>
     <div className="row" style={{ height: "75vh", overflowY: "auto"}}>
     {currentLessonIndex === 0 && <LowLevelContent1 />}
     {currentLessonIndex === 1 && <LowLevelContent2 />}
+    {currentLessonIndex === 2 && <LowLevelContent3 />}
     </div>
     <div className="row" style={{textAlign: "center"}}>
       <div className="col">
@@ -34,7 +36,7 @@ const Lessons = () => {
         </button>
       </div>
       <div className="col">
-        <button className="lesson-button" onClick={handleNext} disabled={currentLessonIndex === 1}>
+        <button className="lesson-button" onClick={handleNext} disabled={currentLessonIndex === 2}>
         Next
         </button>
       </div>

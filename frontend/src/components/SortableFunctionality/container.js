@@ -5,7 +5,7 @@ import {
   verticalListSortingStrategy
 } from "@dnd-kit/sortable";
 
-import SortableList from "./sortable_item";
+import SortableList from "../SortableFunctionality/sortable_item";
 
 const containerStyle = {
   background: "#dadada",

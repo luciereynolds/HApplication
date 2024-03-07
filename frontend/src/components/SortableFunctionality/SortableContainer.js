@@ -10,8 +10,8 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 
-import Container from './container';
-import { Item } from './sortable_item';
+import Container from '../SortableFunctionality/container';
+import { Item } from '../SortableFunctionality/sortable_item';
 
 const wrapperStyle = {
   display: 'flex',

@@ -1,5 +1,5 @@
 import React from "react";
-import SortableContainer from "./SortableContainer";
+import SortableContainer from "../SortableFunctionality/SortableContainer";
 
 const SortingLessonDTS = () => {
   const initialItems = {

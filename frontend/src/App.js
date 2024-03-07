@@ -6,7 +6,7 @@ import Leaderboard from "./components/Leaderboard";
 import Navigation from "./components/Navigation";
 import NoPage from "./components/NoPage";
 import MainLessons from "./components/MainLessons";
-import DataTypesStructures from "./components/DataTypesStructures";
+import DataTypesLesson from "./components/DataTypesLesson";
 import LowLevelLesson from "./components/LowLevelLesson";
 import 'bootstrap/dist/js/bootstrap.js';
 import "./App.css";
@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/lessons" element={<MainLessons />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/lessons/datatypesandstructures" element={<DataTypesStructures />} />
+            <Route path="/lessons/datatypesandstructures" element={<DataTypesLesson />} />
             <Route path="/lessons/LowLevelOperation" element={<LowLevelLesson />} />
             <Route path="*" element={<NoPage />} />
           </Routes>
