@@ -3,10 +3,10 @@ import Image from "../images/GamingHome.png";
 
 const Home = () => {
   return (
-    <div className="container-fluid" style={{padding: "50px", paddingTop: "0px"}}>
+    <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>
       <div className="row">
         <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem" }}>
-          <br/>
+          <br />
           <h3><b>Welcome to the exciting world of National 4 Computer Science!</b></h3>
           <br></br>
           <p>
@@ -24,9 +24,10 @@ const Home = () => {
             So, are you ready to level up your computer science skills? Let the
             adventure begin!
           </p>
-          <button>
+          <br/>
+          <a href="/lessons" className="homepage-button" style={{textDecoration: 'none' }}>
             Get Learning!
-          </button>
+          </a>
         </div>
         <div className="col-md p-3 mx-2 text-dark order-md-last">
           <img
