@@ -16,7 +16,7 @@ const DataTypeContent3 = () => {
                     </ul>
                     <p>The last example is clearly a phone number. You might expect a phone number to be stored as an integer but this is not the case.</p>
                     <p>The main advantage of storing data as integers is so that you can use it in calculations. We do not normally do this with phone numbers.</p>
-                    <p><b>Key Fact!</b></p>
+                    <p><b>Fun Fact!</b></p>
                     <p>The string data type can store words, numbers, or words and numbers together like an address.</p>
                 </div>
             </div>

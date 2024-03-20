@@ -23,8 +23,8 @@ const Lessons = () => {
   // returns lesson content to be called in SortingLesson
   return (
     <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>
-      <div className="row text-light" style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", backgroundColor: "#2eba68", borderRadius: "20px", padding: "1rem" }}>
-        <h3 style={{ margin: 0 }}>Low Level Operations and Architecture</h3>
+      <div className="row text-light" style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", backgroundColor: "#6a5bcf", borderRadius: "20px", padding: "1rem" }}>
+        <h3 style={{ margin: 0 }}>Data Types and Structures</h3>
       </div>
       <div className="row" style={{ height: "75vh", overflowY: "auto" }}>
         {currentLessonIndex === 0 && <DataTypeContent1 />}

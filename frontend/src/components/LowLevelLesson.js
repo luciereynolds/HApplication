@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import LowLevelContent1 from "./LowLevelContent/LowLevelContent1";
 import LowLevelContent2 from "./LowLevelContent/LowLevelContent2";
 import LowLevelContent3 from "./LowLevelContent/LowLevelContent3";
+import LowLevelContent4 from "./LowLevelContent/LowLevelContent4";
+import LowLevelContent5 from "./LowLevelContent/LowLevelContent5";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -14,7 +16,7 @@ const Lessons = () => {
     setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
-  const totalLessons = 3; // Set the total number of lessons
+  const totalLessons = 5; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
 
@@ -27,6 +29,8 @@ const Lessons = () => {
         {currentLessonIndex === 0 && <LowLevelContent1 />}
         {currentLessonIndex === 1 && <LowLevelContent2 />}
         {currentLessonIndex === 2 && <LowLevelContent3 />}
+        {currentLessonIndex === 3 && <LowLevelContent4 />}
+        {currentLessonIndex === 4 && <LowLevelContent5 />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
