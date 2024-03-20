@@ -43,7 +43,7 @@ const defaultAnnouncements = {
   },
 };
 
-const SortableContainer = ({ initialItems }) => {
+const SortableContainer = ({ initialItems, onSortChange }) => {
   const [items, setItems] = useState(initialItems);
   const [activeId, setActiveId] = useState();
 
@@ -130,7 +130,7 @@ const SortableContainer = ({ initialItems }) => {
         newIndex--;
       }
   
-      return {
+      const newItems = {
         ...prev,
         [activeContainer]: [
           ...prev[activeContainer].filter((item) => item !== active.id),
@@ -141,6 +141,11 @@ const SortableContainer = ({ initialItems }) => {
           ...prev[overContainer].slice(newIndex, prev[overContainer].length),
         ],
       };
+
+      // Call the provided onSortChange function with the new state
+      onSortChange(newItems);
+
+      return newItems;
     });
   }
 
@@ -168,10 +173,15 @@ const SortableContainer = ({ initialItems }) => {
     const overIndex = items[overContainer].indexOf(overId);
   
     if (activeIndex !== overIndex) {
-      setItems((items) => ({
+      const newItems = {
         ...items,
         [overContainer]: arrayMove(items[overContainer], activeIndex, overIndex),
-      }));
+      };
+
+      // Call the provided onSortChange function with the new state
+      onSortChange(newItems);
+
+      setItems(newItems);
     }
   
     setActiveId(null);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SortableContainer from "../SortableFunctionality/SortableContainer";
 
 const SortingLessonDTS = () => {
@@ -7,6 +7,36 @@ const SortingLessonDTS = () => {
     container1: [],
     container2: [],
     container3: [],
+  };
+
+  const [sortedItems, setSortedItems] = useState(initialItems);
+
+  const handleSubmit = () => {
+    const correctOrder = {
+      root: [],
+      container1: ['"Hello World!"','"01414960999"',],
+      container2: ['2','362'],
+      container3: ['true','false',],
+    };
+
+    console.log("Sorted Items:", sortedItems);
+    console.log("Correct Order:", correctOrder);
+
+    let isCorrect = true;
+
+    // Compare each item in sortedItems with corresponding item in correctOrder
+    for (const key in sortedItems) {
+      if (JSON.stringify(sortedItems[key]) !== JSON.stringify(correctOrder[key])) {
+        isCorrect = false;
+        break;
+      }
+    }
+
+    if (isCorrect) {
+      alert("Congratulations! The items are sorted correctly.");
+    } else {
+      alert("Sorry! The items are not sorted correctly. Please try again.");
+    }
   };
 
   return (
@@ -34,7 +64,12 @@ const SortingLessonDTS = () => {
         </div>
       </div>
       <div className="row">
-        <SortableContainer initialItems={initialItems} />
+        <SortableContainer initialItems={initialItems} onSortChange={setSortedItems} />
+      </div>
+      <div className="row">
+        <div className="col text-center">
+          <button onClick={handleSubmit} className="btn btn-primary">Submit</button>
+        </div>
       </div>
     </div>
   );
