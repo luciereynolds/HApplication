@@ -3,6 +3,7 @@ import SortingLessonDTS from "./DataTypeContent/SortingLessonDTS";
 import DataTypeContent1 from "./DataTypeContent/DataTypeContent1";
 import DataTypeContent2 from "./DataTypeContent/DataTypeContent2";
 import DataTypeContent3 from "./DataTypeContent/DataTypeContent3";
+import DataTypeContent4 from "./DataTypeContent/DataTypeContent4";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -15,7 +16,7 @@ const Lessons = () => {
     setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
-  const totalLessons = 4; // Set the total number of lessons
+  const totalLessons = 5; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
   
@@ -29,7 +30,8 @@ const Lessons = () => {
         {currentLessonIndex === 0 && <DataTypeContent1 />}
         {currentLessonIndex === 1 && <DataTypeContent2 />}
         {currentLessonIndex === 2 && <DataTypeContent3 />}
-        {currentLessonIndex === 3 && <SortingLessonDTS />}
+        {currentLessonIndex === 3 && <DataTypeContent4 />}
+        {currentLessonIndex === 4 && <SortingLessonDTS />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
