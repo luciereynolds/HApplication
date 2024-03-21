@@ -62,6 +62,86 @@ class FlipCounter extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="col">
+              <div className="flipCounter">
+                <div className="upperCard">
+                  <span>{newNum}</span>
+                </div>
+                <div className="lowerCard">
+                  <span>{oldNum}</span>
+                </div>
+                <div className={`flipCard first ${animation1}`}>
+                  <span>{number1}</span>
+                </div>
+                <div className={`flipCard second ${animation2}`}>
+                  <span>{number2}</span>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="flipCounter">
+                <div className="upperCard">
+                  <span>{newNum}</span>
+                </div>
+                <div className="lowerCard">
+                  <span>{oldNum}</span>
+                </div>
+                <div className={`flipCard first ${animation1}`}>
+                  <span>{number1}</span>
+                </div>
+                <div className={`flipCard second ${animation2}`}>
+                  <span>{number2}</span>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="flipCounter">
+                <div className="upperCard">
+                  <span>{newNum}</span>
+                </div>
+                <div className="lowerCard">
+                  <span>{oldNum}</span>
+                </div>
+                <div className={`flipCard first ${animation1}`}>
+                  <span>{number1}</span>
+                </div>
+                <div className={`flipCard second ${animation2}`}>
+                  <span>{number2}</span>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="flipCounter">
+                <div className="upperCard">
+                  <span>{newNum}</span>
+                </div>
+                <div className="lowerCard">
+                  <span>{oldNum}</span>
+                </div>
+                <div className={`flipCard first ${animation1}`}>
+                  <span>{number1}</span>
+                </div>
+                <div className={`flipCard second ${animation2}`}>
+                  <span>{number2}</span>
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className="flipCounter">
+                <div className="upperCard">
+                  <span>{newNum}</span>
+                </div>
+                <div className="lowerCard">
+                  <span>{oldNum}</span>
+                </div>
+                <div className={`flipCard first ${animation1}`}>
+                  <span>{number1}</span>
+                </div>
+                <div className={`flipCard second ${animation2}`}>
+                  <span>{number2}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
