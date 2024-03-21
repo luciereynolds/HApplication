@@ -16,7 +16,7 @@ const LowLevelContent5 = () => {
             <div className="row">
                 <div className="col p-3 mx-2">
                     <p>Here is a table of ASCII codes:</p>
-                    <table className="table table-bordered">
+                    <table className="table table-bordered" style={{fontSize: "10pt"}}>
                         <thead>
                             <tr>
                                 <th style={tableHeaderStyle}>Code</th>

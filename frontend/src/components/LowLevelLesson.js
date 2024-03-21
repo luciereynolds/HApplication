@@ -4,6 +4,7 @@ import LowLevelContent2 from "./LowLevelContent/LowLevelContent2";
 import LowLevelContent3 from "./LowLevelContent/LowLevelContent3";
 import LowLevelContent4 from "./LowLevelContent/LowLevelContent4";
 import LowLevelContent5 from "./LowLevelContent/LowLevelContent5";
+import FLipClockTest from "./LowLevelContent/FlipClockTest";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -16,7 +17,7 @@ const Lessons = () => {
     setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
-  const totalLessons = 5; // Set the total number of lessons
+  const totalLessons = 6; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
 
@@ -31,6 +32,7 @@ const Lessons = () => {
         {currentLessonIndex === 2 && <LowLevelContent3 />}
         {currentLessonIndex === 3 && <LowLevelContent4 />}
         {currentLessonIndex === 4 && <LowLevelContent5 />}
+        {currentLessonIndex === 5 && <FLipClockTest />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
