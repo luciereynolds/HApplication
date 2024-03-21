@@ -7,7 +7,7 @@ const FLipClockTest = () => {
         <section className="flex flex-col justify-center items-center h-screen md:w-screen md:h-screen">
             <div className="bg-black/70 absolute w-full h-full"></div>
             <div className="absolute flex flex-col items-center text-center">
-            <h3>Testing Flip function to eventually implement binary.</h3>
+            <h4>Testing Flip function to eventually implement binary.</h4>
                 <FlipClockCountdown 
                     to={new Date().getTime() + 24 * 3600 * 1000 + 5000} 
                     labels={['DAYS', 'HOURS', 'MINUTES', 'SECONDS']}
