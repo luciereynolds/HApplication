@@ -4,7 +4,7 @@ import LowLevelContent2 from "./LowLevelContent/LowLevelContent2";
 import LowLevelContent3 from "./LowLevelContent/LowLevelContent3";
 import LowLevelContent4 from "./LowLevelContent/LowLevelContent4";
 import LowLevelContent5 from "./LowLevelContent/LowLevelContent5";
-import FLipClockTest from "./LowLevelContent/FlipClockTest";
+import BinaryCounter from "./LowLevelContent/BinaryCounter";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -30,7 +30,7 @@ const Lessons = () => {
         {currentLessonIndex === 0 && <LowLevelContent1 />}
         {currentLessonIndex === 1 && <LowLevelContent2 />}
         {currentLessonIndex === 2 && <LowLevelContent3 />}
-        {currentLessonIndex === 3 && <FLipClockTest />}
+        {currentLessonIndex === 3 && <BinaryCounter />}
         {currentLessonIndex === 4 && <LowLevelContent4 />}
         {currentLessonIndex === 5 && <LowLevelContent5 />}
       </div>
