@@ -30,9 +30,9 @@ const Lessons = () => {
         {currentLessonIndex === 0 && <LowLevelContent1 />}
         {currentLessonIndex === 1 && <LowLevelContent2 />}
         {currentLessonIndex === 2 && <LowLevelContent3 />}
-        {currentLessonIndex === 3 && <LowLevelContent4 />}
-        {currentLessonIndex === 4 && <LowLevelContent5 />}
-        {currentLessonIndex === 5 && <FLipClockTest />}
+        {currentLessonIndex === 3 && <FLipClockTest />}
+        {currentLessonIndex === 4 && <LowLevelContent4 />}
+        {currentLessonIndex === 5 && <LowLevelContent5 />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
