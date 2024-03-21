@@ -12,7 +12,7 @@ const TranslationExercise = () => {
         const correctAnswer = "great job cadet";
         if (inputValue === correctAnswer) {
             setIsCorrect(true);
-            alert("Congratulations!");
+            alert("Congratulations! You solved it!");
         } else {
             setIsCorrect(false);
             alert("Oops, that's not quite right. Remember to use the table for help!");
@@ -33,13 +33,15 @@ const TranslationExercise = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col p-3 mx-2">
-                    <h3>Let's try solve this riddle...</h3>
+                    <h3>Let's try solve this secret message...</h3>
                     <p>The following information is a secret message written using ASCII. Can you translate it? Use the table at the side for help.</p>
                     <h6>Secret Message!</h6>
                     <p><b>103&nbsp;&nbsp;114&nbsp;&nbsp;101&nbsp;&nbsp;97&nbsp;&nbsp;116&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;106&nbsp;&nbsp;111&nbsp;&nbsp;98&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;97&nbsp;&nbsp;100&nbsp;&nbsp;101&nbsp;&nbsp;116</b></p>
-                    <input type="text" value={inputValue} onChange={handleInputChange} />
-                    <br/>
-                    <button onClick={checkAnswer}>Check Answer</button>
+                    <input type="text" style={{ width: '100%', padding: '0.5rem' }} value={inputValue} onChange={handleInputChange} />
+                    <br />
+                    <div className="col p-3 mx-2 d-flex justify-content-center">
+                        <button className="homepage-button" onClick={checkAnswer} style={{ marginTop: "0.5rem" }}>Check Answer</button>
+                    </div>
                 </div>
                 <div className="col p-3 mx-2">
                     <table className="table table-bordered" style={{ fontSize: "10pt" }}>
