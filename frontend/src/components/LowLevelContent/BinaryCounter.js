@@ -58,8 +58,8 @@ class FlipCounter extends React.Component {
                   {value === 0 ? '0' : '1'}
                 </motion.span>
               ))}
-              <span className="numberFlip">=</span>
-              <motion.span key="decimal" className="numberFlip">
+              <span className="numberFlipEqual">=</span>
+              <motion.span key="decimal" className="numberFlipDecimal">
                 {decimalNumber}
               </motion.span>
             </div>
