@@ -4,14 +4,13 @@ class FlipCounter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newNum: new Date().getSeconds() === 0 ? 60 : new Date().getSeconds(),
-      oldNum: new Date().getSeconds() - 1 === -1 ? 59 : new Date().getSeconds() - 1,
-      change: true
+      binaryValues: [0, 0, 0, 0, 0, 0, 0, 0],
+      decimalNumber: 0
     };
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 50);
+    this.timerID = setInterval(() => this.tick(), 1000); // Update every second
   }
 
   componentWillUnmount() {
@@ -19,128 +18,43 @@ class FlipCounter extends React.Component {
   }
 
   tick() {
-    const newNum = new Date().getSeconds() % 2;
-    if (this.state.newNum !== newNum) {
-      const oldNum = newNum === 0 ? 1 : 0;
-      const change = !this.state.change;
-      this.setState({
-        newNum,
-        oldNum,
-        change
-      });
+    const { binaryValues } = this.state;
+    const newBinaryValues = [...binaryValues];
+
+    // Increment the binary representation
+    for (let i = newBinaryValues.length - 1; i >= 0; i--) {
+      if (newBinaryValues[i] === 0) {
+        newBinaryValues[i] = 1;
+        break;
+      } else {
+        newBinaryValues[i] = 0;
+      }
     }
-}
 
+    // Calculate the decimal number
+    const decimalNumber = parseInt(newBinaryValues.join(''), 2);
 
+    this.setState({
+      binaryValues: newBinaryValues,
+      decimalNumber
+    });
+  }
 
   render() {
-    const { newNum, oldNum, change } = this.state;
-    const animation1 = change ? "fold" : "unfold";
-    const animation2 = !change ? "fold" : "unfold";
-    const number1 = change ? oldNum : newNum;
-    const number2 = !change ? oldNum : newNum;
+    const { binaryValues, decimalNumber } = this.state;
 
     return (
-      <div className="col p-3 mx-2" style={{textAlign: "center"}}>
-        <h3>Binary Counter!</h3>
-        <p>Watch as the binary digits change to see how integers are represented!</p>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col">
-              <div className="flipCounter">
-                <div className="upperCard">
-                  <span>{newNum}</span>
-                </div>
-                <div className="lowerCard">
-                  <span>{oldNum}</span>
-                </div>
-                <div className={`flipCard first ${animation1}`}>
-                  <span>{number1}</span>
-                </div>
-                <div className={`flipCard second ${animation2}`}>
-                  <span>{number2}</span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="flipCounter">
-                <div className="upperCard">
-                  <span>{newNum}</span>
-                </div>
-                <div className="lowerCard">
-                  <span>{oldNum}</span>
-                </div>
-                <div className={`flipCard first ${animation1}`}>
-                  <span>{number1}</span>
-                </div>
-                <div className={`flipCard second ${animation2}`}>
-                  <span>{number2}</span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="flipCounter">
-                <div className="upperCard">
-                  <span>{newNum}</span>
-                </div>
-                <div className="lowerCard">
-                  <span>{oldNum}</span>
-                </div>
-                <div className={`flipCard first ${animation1}`}>
-                  <span>{number1}</span>
-                </div>
-                <div className={`flipCard second ${animation2}`}>
-                  <span>{number2}</span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="flipCounter">
-                <div className="upperCard">
-                  <span>{newNum}</span>
-                </div>
-                <div className="lowerCard">
-                  <span>{oldNum}</span>
-                </div>
-                <div className={`flipCard first ${animation1}`}>
-                  <span>{number1}</span>
-                </div>
-                <div className={`flipCard second ${animation2}`}>
-                  <span>{number2}</span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="flipCounter">
-                <div className="upperCard">
-                  <span>{newNum}</span>
-                </div>
-                <div className="lowerCard">
-                  <span>{oldNum}</span>
-                </div>
-                <div className={`flipCard first ${animation1}`}>
-                  <span>{number1}</span>
-                </div>
-                <div className={`flipCard second ${animation2}`}>
-                  <span>{number2}</span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="flipCounter">
-                <div className="upperCard">
-                  <span>{newNum}</span>
-                </div>
-                <div className="lowerCard">
-                  <span>{oldNum}</span>
-                </div>
-                <div className={`flipCard first ${animation1}`}>
-                  <span>{number1}</span>
-                </div>
-                <div className={`flipCard second ${animation2}`}>
-                  <span>{number2}</span>
-                </div>
-              </div>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col p-3 mx-2">
+            <h3>Binary Counter!</h3>
+            <p>Watch as the binary digits change to see how integers are represented!</p>
+            <div>
+              {binaryValues.map((value, index) => (
+                <span key={index} style={{ backgroundColor: "#d3d3d3", padding: "5px", margin: "2px" }}>{value}</span>
+              ))}
+              <span>=</span>
+              <span>{decimalNumber}</span>
             </div>
           </div>
         </div>
