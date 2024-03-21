@@ -19,9 +19,9 @@ class FlipCounter extends React.Component {
   }
 
   tick() {
-    const newNum = new Date().getSeconds() === 0 ? 60 : new Date().getSeconds();
+    const newNum = new Date().getSeconds() % 2;
     if (this.state.newNum !== newNum) {
-      const oldNum = newNum - 1 === 0 ? 60 : newNum - 1;
+      const oldNum = newNum === 0 ? 1 : 0;
       const change = !this.state.change;
       this.setState({
         newNum,
@@ -29,7 +29,9 @@ class FlipCounter extends React.Component {
         change
       });
     }
-  }
+}
+
+
 
   render() {
     const { newNum, oldNum, change } = this.state;
