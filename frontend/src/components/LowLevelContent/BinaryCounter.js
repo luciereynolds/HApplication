@@ -44,9 +44,6 @@ class FlipCounter extends React.Component {
   render() {
     const { binaryValues, decimalNumber } = this.state;
 
-    // Convert the decimal number to an array of digits
-    const decimalDigits = decimalNumber.toString().split('').map(Number);
-
     return (
       <div className="container-fluid">
         <div className="row">
@@ -54,23 +51,19 @@ class FlipCounter extends React.Component {
             <h3>Binary Counter!</h3>
             <p>Watch as the binary digits change to see how integers are represented!</p>
             <div className="row">
-              <div className="col p-3 mx-2" style={{ fontSize: "16pt" }}>
-                <div style={{ display: 'flex' }}>
-                  {/* Render binary digits */}
-                  {binaryValues.map((value, index) => (
-                    <motion.span key={index} className="numberFlip" animate={{ rotateX: value === 0 ? 180 : 0 }}>
-                      {value === 0 ? '0' : '1'}
-                    </motion.span>
-                  ))}
-                  <span className="numberFlip">=</span>
-                  {/* Render decimal digits */}
-                  {decimalDigits.map((digit, index) => (
-                    <motion.span key={`decimal-${index}`} className="numberFlip" animate={{ rotateX: digit % 2 === 0 ? 180 : 0 }}>
-                      {digit}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
+            <div className="col d-flex justify-content-center">
+            <div style={{ display: 'flex' }}>
+              {binaryValues.map((value, index) => (
+                <motion.span key={index} className="numberFlip" animate={{ rotateX: value === 0 ? 180 : 0}}>
+                  {value === 0 ? '0' : '1'}
+                </motion.span>
+              ))}
+              <span className="numberFlip">=</span>
+              <motion.span key="decimal" className="numberFlip">
+                {decimalNumber}
+              </motion.span>
+            </div>
+            </div>
             </div>
           </div>
         </div>
