@@ -260,7 +260,19 @@ table {
       transition: .5s;
       opacity: 1;
   }
-
+  
+  .numberFlip {
+    display: inline-flex; /* Use inline-flex to allow the element to shrink to fit content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 50px;
+    height: 60px;
+    background-color: #403f3f;
+    border-radius: 3px;
+    color: white;
+    text-align: center; /* Center text horizontally */
+  }
+  
 
 /* Styling for binary counter */
 
