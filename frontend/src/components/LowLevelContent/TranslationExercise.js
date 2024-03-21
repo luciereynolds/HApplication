@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TranslationExercise = () => {
+    const [inputValue, setInputValue] = useState("");
+    const [, setIsCorrect] = useState(false);
+
+    const handleInputChange = (e) => {
+        setInputValue(e.target.value);
+    };
+
+    const checkAnswer = () => {
+        const correctAnswer = "great job cadet";
+        if (inputValue === correctAnswer) {
+            setIsCorrect(true);
+            alert("Congratulations!");
+        } else {
+            setIsCorrect(false);
+            alert("Oops, that's not quite right. Remember to use the table for help!");
+        }
+    };
 
     const tableHeaderStyle = {
-        backgroundColor: "#2eba68", // Set the background color to green
-        color: "white", // Set the text color to white for better contrast
+        backgroundColor: "#2eba68",
+        color: "white",
     };
 
     const altTableHeaderStyle = {
@@ -20,6 +37,9 @@ const TranslationExercise = () => {
                     <p>The following information is a secret message written using ASCII. Can you translate it? Use the table at the side for help.</p>
                     <h6>Secret Message!</h6>
                     <p><b>103&nbsp;&nbsp;114&nbsp;&nbsp;101&nbsp;&nbsp;97&nbsp;&nbsp;116&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;106&nbsp;&nbsp;111&nbsp;&nbsp;98&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;97&nbsp;&nbsp;100&nbsp;&nbsp;101&nbsp;&nbsp;116</b></p>
+                    <input type="text" value={inputValue} onChange={handleInputChange} />
+                    <br/>
+                    <button onClick={checkAnswer}>Check Answer</button>
                 </div>
                 <div className="col p-3 mx-2">
                     <table className="table table-bordered" style={{ fontSize: "10pt" }}>
