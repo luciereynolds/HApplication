@@ -8,6 +8,7 @@ import NoPage from "./components/NoPage";
 import MainLessons from "./components/MainLessons";
 import DataTypesLesson from "./components/DataTypesLesson";
 import LowLevelLesson from "./components/LowLevelLesson";
+import TestingAndDocLesson from "./components/TestingAndDocLesson";
 import 'bootstrap/dist/js/bootstrap.js';
 import "./App.css";
 import "leaflet/dist/leaflet.css";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/lessons/datatypesandstructures" element={<DataTypesLesson />} />
             <Route path="/lessons/LowLevelOperation" element={<LowLevelLesson />} />
+            <Route path="/lessons/TestingAndDocumenting" element={<TestingAndDocLesson />} />
             <Route path="*" element={<NoPage />} />
           </Routes>
         </BrowserRouter>
