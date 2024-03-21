@@ -1,21 +1,70 @@
-import React from "react";
-import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown"
-import '@leenguyen/react-flip-clock-countdown/dist/index.css'
+import React from 'react';
 
-const FLipClockTest = () => {
+class FlipCounter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newNum: new Date().getSeconds() === 0 ? 60 : new Date().getSeconds(),
+      oldNum: new Date().getSeconds() - 1 === -1 ? 59 : new Date().getSeconds() - 1,
+      change: true
+    };
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 50);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    const newNum = new Date().getSeconds() === 0 ? 60 : new Date().getSeconds();
+    if (this.state.newNum !== newNum) {
+      const oldNum = newNum - 1 === 0 ? 60 : newNum - 1;
+      const change = !this.state.change;
+      this.setState({
+        newNum,
+        oldNum,
+        change
+      });
+    }
+  }
+
+  render() {
+    const { newNum, oldNum, change } = this.state;
+    const animation1 = change ? "fold" : "unfold";
+    const animation2 = !change ? "fold" : "unfold";
+    const number1 = change ? oldNum : newNum;
+    const number2 = !change ? oldNum : newNum;
+
     return (
-        <section className="flex flex-col justify-center items-center h-screen md:w-screen md:h-screen">
-            <div className="bg-black/70 absolute w-full h-full"></div>
-            <div className="absolute flex flex-col items-center text-center">
-            <h4>Testing Flip function to eventually implement binary.</h4>
-                <FlipClockCountdown 
-                    to={new Date().getTime() + 24 * 3600 * 1000 + 5000} 
-                    labels={['DAYS', 'HOURS', 'MINUTES', 'SECONDS']}
-                    duration={0.5} 
-                />
+      <div className="col p-3 mx-2" style={{textAlign: "center"}}>
+        <h3>Binary Counter!</h3>
+        <p>Watch as the binary digits change to see how integers are represented!</p>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col">
+              <div className="flipCounter">
+                <div className="upperCard">
+                  <span>{newNum}</span>
+                </div>
+                <div className="lowerCard">
+                  <span>{oldNum}</span>
+                </div>
+                <div className={`flipCard first ${animation1}`}>
+                  <span>{number1}</span>
+                </div>
+                <div className={`flipCard second ${animation2}`}>
+                  <span>{number2}</span>
+                </div>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
     );
-};
+  }
+}
 
-export default FLipClockTest;
+export default FlipCounter;
