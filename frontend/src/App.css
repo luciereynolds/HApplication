@@ -262,6 +262,8 @@ table {
   }
 
 
+/* Styling for binary counter */
+
 .flipCounter {
   display: block;
   position: relative;
