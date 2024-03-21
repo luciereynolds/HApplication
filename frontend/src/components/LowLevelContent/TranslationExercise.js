@@ -19,6 +19,7 @@ const TranslationExercise = () => {
                     <h3>Let's try solve this riddle...</h3>
                     <p>The following information is a secret message written using ASCII. Can you translate it? Use the table at the side for help.</p>
                     <h6>Secret Message!</h6>
+                    <p><b>103&nbsp;&nbsp;114&nbsp;&nbsp;101&nbsp;&nbsp;97&nbsp;&nbsp;116&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;106&nbsp;&nbsp;111&nbsp;&nbsp;98&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;99&nbsp;&nbsp;97&nbsp;&nbsp;100&nbsp;&nbsp;101&nbsp;&nbsp;116</b></p>
                 </div>
                 <div className="col p-3 mx-2">
                     <table className="table table-bordered" style={{ fontSize: "10pt" }}>
