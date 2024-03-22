@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import SortingLessonDTS from "./DataTypeContent/SortingLessonDTS";
-import DataTypeContent1 from "./DataTypeContent/DataTypeContent1";
-import DataTypeContent2 from "./DataTypeContent/DataTypeContent2";
-import DataTypeContent3 from "./DataTypeContent/DataTypeContent3";
-import DataTypeContent4 from "./DataTypeContent/DataTypeContent4";
+import TestingContent1 from "./TestingDocContent/TestingContent1";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -27,11 +23,7 @@ const Lessons = () => {
         <h3 style={{ margin: 0 }}>Testing and Documenting Solutions</h3>
       </div>
       <div className="row" style={{ height: "75vh", overflowY: "auto" }}>
-        {currentLessonIndex === 0 && <DataTypeContent1 />}
-        {currentLessonIndex === 1 && <DataTypeContent2 />}
-        {currentLessonIndex === 2 && <DataTypeContent3 />}
-        {currentLessonIndex === 3 && <DataTypeContent4 />}
-        {currentLessonIndex === 4 && <SortingLessonDTS />}
+        {currentLessonIndex === 0 && <TestingContent1 />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
