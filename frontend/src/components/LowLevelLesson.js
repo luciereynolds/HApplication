@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import LowLevelContent1 from "./LowLevelContent/LowLevelContent1";
 import LowLevelContent2 from "./LowLevelContent/LowLevelContent2";
 import LowLevelContent3 from "./LowLevelContent/LowLevelContent3";
@@ -11,7 +12,12 @@ const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
 
   const handleNext = () => {
-    setCurrentLessonIndex((prevIndex) => prevIndex + 1);
+    if (currentLessonIndex === totalLessons - 1) {
+      // If it's the last lesson, navigate back to the lessons page
+      window.location.href = "/lessons";
+    } else {
+      setCurrentLessonIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   const handleBack = () => {
@@ -49,8 +55,8 @@ const Lessons = () => {
           </div>
         </div>
         <div className="col">
-          <button className="lesson-button" onClick={handleNext} disabled={currentLessonIndex === totalLessons - 1}>
-            Next
+          <button className="lesson-button" onClick={handleNext}>
+            {currentLessonIndex === totalLessons - 1 ? "Finish" : "Next"}
           </button>
         </div>
       </div>
