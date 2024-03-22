@@ -12,7 +12,7 @@ const Lessons = () => {
     setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
-  const totalLessons = 5; // Set the total number of lessons
+  const totalLessons = 1; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
   
