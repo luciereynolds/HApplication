@@ -15,7 +15,7 @@ const TestingContent1 = () => {
                         <li><b>Extreme</b> data is data at the upper and lower limits of the range.</li>
                         <li><b>Exceptional</b> data is data that should <b>not</b> be accepted by the program.</li>
                     </ul>
-                    <p>Let's look at an example that is designed to process students' test scores out of 50.</p>
+                    <p>Next we'll look at an example of testing and the normal, extreme and exceptional data used.</p>
                 </div>
             </div>
         </div>
