@@ -43,6 +43,8 @@ const TestingContent2 = () => {
                             </tr>
                         </tbody>
                     </table>
+                    <p>When testing programs, it is good practice to set up a test plan where you test at <b>least</b> two cases of data from each category.</p>
+                    <p>It is also important to know that extreme test data is <b>NOT</b> boundary testing. Sometimes extreme data is referred to as ‘boundary testing’ but this is a little inaccurate. In the above example, boundary testing would test the extreme data of 0 and 50 but would also include -1 and 51.</p>
                 </div>
             </div>
         </div>
