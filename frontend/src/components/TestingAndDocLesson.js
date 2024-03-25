@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TestingContent1 from "./TestingDocContent/TestingContent1";
 import TestingContent2 from "./TestingDocContent/TestingContent2";
-import WordConnectionTest from "./TestingDocContent/WordConnectionTest";
+import WordConnectionTask from "./TestingDocContent/WordConnectionTask";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -27,7 +27,7 @@ const Lessons = () => {
       <div className="row" style={{ height: "75vh", overflowY: "auto" }}>
         {currentLessonIndex === 0 && <TestingContent1 />}
         {currentLessonIndex === 1 && <TestingContent2 />}
-        {currentLessonIndex === 2 && <WordConnectionTest />}
+        {currentLessonIndex === 2 && <WordConnectionTask />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
