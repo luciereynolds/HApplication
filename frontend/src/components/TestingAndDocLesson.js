@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TestingContent1 from "./TestingDocContent/TestingContent1";
 import TestingContent2 from "./TestingDocContent/TestingContent2";
 import WordConnectionTask from "./TestingDocContent/WordConnectionTask";
+import TestingContent3 from "./TestingDocContent/TestingContent3";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -14,7 +15,7 @@ const Lessons = () => {
     setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
-  const totalLessons = 3; // Set the total number of lessons
+  const totalLessons = 4; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
   
@@ -28,6 +29,7 @@ const Lessons = () => {
         {currentLessonIndex === 0 && <TestingContent1 />}
         {currentLessonIndex === 1 && <TestingContent2 />}
         {currentLessonIndex === 2 && <WordConnectionTask />}
+        {currentLessonIndex === 3 && <TestingContent3 />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
