@@ -5,6 +5,7 @@ import WordConnectionTask from "./TestingDocContent/WordConnectionTask";
 import TestingContent3 from "./TestingDocContent/TestingContent3";
 import TestingContent4 from "./TestingDocContent/TestingContent4";
 import TestingContent5 from "./TestingDocContent/TestingContent5";
+import TestingContent6 from "./TestingDocContent/TestingContent6";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -17,7 +18,7 @@ const Lessons = () => {
     setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
   };
 
-  const totalLessons = 6; // Set the total number of lessons
+  const totalLessons = 7; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
   
@@ -34,6 +35,7 @@ const Lessons = () => {
         {currentLessonIndex === 3 && <TestingContent3 />}
         {currentLessonIndex === 4 && <TestingContent4 />}
         {currentLessonIndex === 5 && <TestingContent5 />}
+        {currentLessonIndex === 6 && <TestingContent6 />}
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
