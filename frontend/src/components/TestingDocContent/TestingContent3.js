@@ -12,7 +12,7 @@ const TestingContent3 = () => {
                         <li>Internal Commentary</li>
                         <li>Meaningful Identifiers (Variable Names)</li>
                     </ul>
-                    <h4>Internal Commentary</h4>
+                    <p>Let's look more at these techniques!</p>
                 </div>
             </div>
         </div>
