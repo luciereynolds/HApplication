@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const TestComponent = () => {
+const KnowledgeTest = () => {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -60,7 +60,7 @@ const TestComponent = () => {
         <div>
           {Object.keys(answers).map(question => (
             <div key={question} className={isCorrect(question) ? 'correct' : 'incorrect'}>
-              <p>{question}</p>
+              <h5>{question}</h5>
               <p><strong>You said:</strong> {answers[question]}</p>
               <p>{isCorrect(question) ? 'Correct' : 'Incorrect'}</p>
               {isCorrect(question) ? (
@@ -86,4 +86,4 @@ const TestComponent = () => {
   );
 };
 
-export default TestComponent;
+export default KnowledgeTest;
