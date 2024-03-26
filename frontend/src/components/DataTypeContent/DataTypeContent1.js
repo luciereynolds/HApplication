@@ -14,7 +14,12 @@ const DataTypeContent1 = () => {
                         <li><b>String (characters)</b> such as names or postcodes. (Can also include phone numbers as Integers cannot start with <b>0</b>.</li>
                     </ul>
                     <p>In reference language you can declare a variable and its data type as follows:</p>
-                    <p><b>DECLARE score AS INTEGER</b></p>
+                    <pre className="code-block">
+                        <code className="language-code">
+                            <span className="line-number">1</span>
+                            <span className="comment">DECLARE score AS INTEGER</span>
+                        </code>
+                    </pre>
                     <p>This would create a variable called score. The computer would now know that whole numbers (integers) can be stored within the score variable.</p>
                     <p>If you asked for someone's test mark (integer) and they typed in their name (string) the programming language would find an error. This is because it is only possible to store whole numbers using the INTEGER data type.</p>
                 </div>
