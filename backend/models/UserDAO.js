@@ -19,11 +19,10 @@ class UserDAO {
     }
 
     init() {
-        // Initialize the database with some demo users (hashed passwords)
-        this.create('Peter', 'password1'); // You can change passwords as needed
+        this.create('Peter', 'password1'); 
         this.create('Ann', 'password2');
         this.create('Lucie', 'password3');
-        this.create('user1','pass');
+        this.create('1','pass');
     }
 
     async create(username, password) {
