@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../images/RocketIcon.png";
 
-const Navigation = () => {
+const Navigation = ({ isLoggedIn }) => {
   return (
     <div className="container-fluid">
       <div className="container">
@@ -38,9 +38,11 @@ const Navigation = () => {
               <a href="/leaderboard" className="nav-item nav-link" style={{ padding:"0.5rem"}}>
                 Leaderboard
               </a>
-              <a href="/login" className="nav-item nav-link active" style={{ padding:"0.5rem"}}>
-                Login
-              </a>
+              {!isLoggedIn && (
+                <a href="/login" className="nav-item nav-link" style={{ padding:"0.5rem"}}>
+                  Login
+                </a>
+              )}
             </div>
           </div>
         </nav>

@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className="wrapper">
-        <Navigation />
+        <Navigation isLoggedIn={isLoggedIn} />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
