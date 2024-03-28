@@ -7,7 +7,7 @@ const NoPage = () => {
       <div className="row">
         <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem" }}>
           <h2><b>404</b></h2>
-          <p>Page under construction 🔨</p>
+          <p>Page not found</p>
         </div>
       </div>
     </div>

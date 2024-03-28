@@ -38,6 +38,9 @@ const Navigation = () => {
               <a href="/leaderboard" className="nav-item nav-link" style={{ padding:"0.5rem"}}>
                 Leaderboard
               </a>
+              <a href="/login" className="nav-item nav-link active" style={{ padding:"0.5rem"}}>
+                Login
+              </a>
             </div>
           </div>
         </nav>
