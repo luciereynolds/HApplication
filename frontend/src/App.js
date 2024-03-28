@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import "./App.css";
 import Home from "./components/Home";
 import Leaderboard from "./components/Leaderboard";
 import Navigation from "./components/Navigation";
@@ -11,14 +12,14 @@ import TestingAndDocLesson from "./components/TestingAndDocLesson";
 import Login from "./components/LogIn";
 import BlockedPage from './components/BlockedPage';
 import NoPage from "./components/NoPage";
+import useToken from "./components/useToken";
 
 import 'bootstrap/dist/js/bootstrap.js';
-import "./App.css";
 import "leaflet/dist/leaflet.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem('token')); // Check if user is already logged in
+  const { token, setToken } = useToken();
   const isLoggedIn = !!token; // Check if user is logged in
 
   return (
