@@ -21,6 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 
+app.use('/login', (req, res) => {
+  res.send({
+    token: 'test123'
+  });
+});
+
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
