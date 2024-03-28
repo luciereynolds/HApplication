@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 async function loginUser(credentials) {
-  return fetch('http://localhost:3001/login', { // Update the backend URL
+  return fetch('http://localhost:3001/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -24,7 +24,7 @@ export default function Login({ setToken }) {
     });
     setToken(token);
     // Redirect to homepage after successful login
-    window.location.href = '/'; // Change the redirection URL if needed
+    window.location.href = '/';
   }
 
   return (

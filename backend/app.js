@@ -21,30 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
 
-// Mock database of users (replace this with your actual database integration)
-const users = [
-  { id: 1, username: 'user1', password: 'password1' },
-  { id: 2, username: 'user2', password: 'password2' },
-  // Add more users as needed
-];
-
-app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  
-  // Check if the provided username and password match any user in the database
-  const user = users.find(u => u.username === username && u.password === password);
-  
-  if (user) {
-    // If user is found, generate a token (you can use JWT or any other method)
-    const token = generateToken(); // Implement this function to generate token
-    
-    res.status(200).json({ token });
-  } else {
-    // If user is not found or credentials are incorrect, return error
-    res.status(401).json({ message: 'Invalid username or password' });
-  }
-});
-
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
@@ -63,4 +39,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
 module.exports = app;
+
+
+// https://openclassrooms.com/en/courses/2504541-ultra-fast-applications-using-node-js/2505444-practical-exercises-the-to-do-list
