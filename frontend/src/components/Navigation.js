@@ -1,7 +1,9 @@
 import React from "react";
 import Logo from "../images/RocketIcon.png";
 
-const Navigation = ({ isLoggedIn }) => {
+const Navigation = () => {
+  const token = localStorage.getItem('token'); // Retrieve token from localStorage
+
   const handleLogout = () => {
     // Clear token from localStorage or perform any other logout actions
     localStorage.removeItem('token');
@@ -45,7 +47,7 @@ const Navigation = ({ isLoggedIn }) => {
               <a href="/leaderboard" className="nav-item nav-link" style={{ padding: "0.5rem" }}>
                 Leaderboard
               </a>
-              {isLoggedIn ? (
+              {token ? ( // Check if token exists
                 <>
                   <a href="/" className="nav-item nav-link" style={{ padding: "0.5rem" }} onClick={handleLogout}>
                     Logout
