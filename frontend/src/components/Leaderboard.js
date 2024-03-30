@@ -1,4 +1,5 @@
 import React from "react";
+import AllLessonsMedal from "../images/AllLessonsMedal.png";
 
 const Leaderboard = () => {
   return (
@@ -13,6 +14,12 @@ const Leaderboard = () => {
             </div>
             <div className="col-md">
               <h4>Your Achievements!🏅</h4>
+              <img
+            src={AllLessonsMedal}
+            alt="Gold medal for completing all lessons"
+            style={{ maxWidth: "20%", height: "auto" }}
+          />
+          <p>Completed all lessons!</p>
             </div>
           </div>
         </div>
