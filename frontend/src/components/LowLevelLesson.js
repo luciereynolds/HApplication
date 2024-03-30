@@ -7,6 +7,7 @@ import LowLevelContent4 from "./LowLevelContent/LowLevelContent4";
 import LowLevelContent5 from "./LowLevelContent/LowLevelContent5";
 import BinaryCounter from "./LowLevelContent/BinaryCounter";
 import TranslationExercise from "./LowLevelContent/TranslationExercise";
+import ConfettiButton from "./ConfettiButton";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -55,9 +56,13 @@ const Lessons = () => {
           </div>
         </div>
         <div className="col">
-          <button className="lesson-button" onClick={handleNext}>
-            {currentLessonIndex === totalLessons - 1 ? "Finish" : "Next"}
-          </button>
+          {currentLessonIndex === totalLessons - 1 ? ( // Conditionally render ConfettiButton if it's the last lesson
+            <ConfettiButton />
+          ) : (
+            <button className="lesson-button" onClick={handleNext}>
+              Next
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import TestingContent1 from "./TestingDocContent/TestingContent1";
 import TestingContent2 from "./TestingDocContent/TestingContent2";
 import WordConnectionTask from "./TestingDocContent/WordConnectionTask";
@@ -6,6 +7,7 @@ import TestingContent3 from "./TestingDocContent/TestingContent3";
 import TestingContent4 from "./TestingDocContent/TestingContent4";
 import TestingContent5 from "./TestingDocContent/TestingContent5";
 import TestingContent6 from "./TestingDocContent/TestingContent6";
+import ConfettiButton from "./ConfettiButton";
 
 const Lessons = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
@@ -55,9 +57,13 @@ const Lessons = () => {
           </div>
         </div>
         <div className="col">
-          <button className="lesson-button" onClick={handleNext}>
-            {currentLessonIndex === totalLessons - 1 ? "Finish" : "Next"}
-          </button>
+          {currentLessonIndex === totalLessons - 1 ? ( // Conditionally render ConfettiButton if it's the last lesson
+            <ConfettiButton />
+          ) : (
+            <button className="lesson-button" onClick={handleNext}>
+              Next
+            </button>
+          )}
         </div>
       </div>
     </div>
