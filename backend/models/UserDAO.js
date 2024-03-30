@@ -22,7 +22,7 @@ class UserDAO {
         this.create('Peter', 'password1'); 
         this.create('Ann', 'password2');
         this.create('Lucie', 'password3');
-        this.create('1','pass');
+        this.create('user','pass');
     }
 
     async create(username, password) {
