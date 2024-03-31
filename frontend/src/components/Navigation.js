@@ -7,6 +7,9 @@ const Navigation = () => {
   const handleLogout = () => {
     // Clear token from localStorage or perform any other logout actions
     localStorage.removeItem('token');
+    localStorage.removeItem('dataTypeLessonCompletion');
+    localStorage.removeItem('lowLevelLessonCompletion');
+    localStorage.removeItem('testingLessonCompletion');
     // Redirect to login page or any other appropriate page
     window.location.href = '/';
   };
