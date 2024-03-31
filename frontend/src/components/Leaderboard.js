@@ -64,14 +64,26 @@ const Leaderboard = () => {
               <h4>How well do you rank?</h4>
               {/* Display users sorted by points */}
               {users.map((user, index) => (
-                  <div key={index}>
-                    <p>{index + 1}. {user.name}: {user.points} points</p>
-                  </div>
-                ))}
+                <div key={index}>
+                  <p>{index + 1}. {user.name}: {user.points} points</p>
+                </div>
+              ))}
             </div>
             <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem", textAlign: "center" }}>
               <h4>Your Achievements!🏅</h4>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
+                {/* Display TopDog Medal if the user is at the top of the leaderboard */}
+                {users.length > 0 && users[0].name === username && (
+                  <div>
+                    <img
+                      src={TopDogMedal}
+                      alt="Top Dog Medal for being number 1 on the leaderboard"
+                      style={{ width: "50%", height: "auto" }}
+                    />
+                    <p>Top Dog! You're no. 1!</p>
+                  </div>
+                )}
+
                 {/* Display Low Level Lesson Medal if completed */}
                 {lowLevelLessonCompleted && (
                   <div>
@@ -121,6 +133,7 @@ const Leaderboard = () => {
                 )}
               </div>
             </div>
+
           </div>
         </div>
       </div>
