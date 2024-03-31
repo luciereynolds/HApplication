@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SortableContainer from "../SortableFunctionality/SortableContainer";
+import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
 const SortingLessonDTS = () => {
   const initialItems = {
@@ -8,6 +9,8 @@ const SortingLessonDTS = () => {
     container2: [],
     container3: [],
   };
+
+  const { addTestPoints } = useTotalPoints(); // Use object destructuring to get addTestPoints
 
   const [sortedItems, setSortedItems] = useState(initialItems);
 
@@ -34,6 +37,7 @@ const SortingLessonDTS = () => {
 
     if (isCorrect) {
       alert("Congratulations! The items are sorted correctly.");
+      addTestPoints(25);
     } else {
       alert("Sorry! The items are not sorted correctly. Please try again.");
     }

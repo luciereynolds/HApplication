@@ -4,7 +4,7 @@ import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hoo
 const KnowledgeTest = () => {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const { addKnowledgeTestPoints } = useTotalPoints(); // Use object destructuring to get addPoints
+  const { addTestPoints } = useTotalPoints(); // Use object destructuring to get addTestPoints
 
   const handleChange = (question, answer) => {
     setAnswers(prevAnswers => ({
@@ -18,7 +18,7 @@ const KnowledgeTest = () => {
     const allCorrect = Object.keys(answers).every(question => isCorrect(question));
     if (allCorrect) {
       // Only add 25 points if all answers are correct
-      addKnowledgeTestPoints(25);
+      addTestPoints(25);
     }
   };
 

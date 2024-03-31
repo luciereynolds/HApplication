@@ -2,30 +2,30 @@ import { useState, useEffect } from 'react';
 
 function useTotalPoints() {
     
-    // Check if totalpoints already exists in local storage
-    const [totalpoints, setTotalPoints] = useState(() => {
-        const storedTotalPoints = localStorage.getItem('totalpoints');
+    // Check if totalPoints already exists in local storage
+    const [totalPoints, setTotalPoints] = useState(() => {
+        const storedTotalPoints = localStorage.getItem('totalPoints');
         return storedTotalPoints ? parseInt(storedTotalPoints, 10) : 0;
     });
 
     // Check if points for knowledge test already exist in local storage
-    const [knowledgeTestPoints, setKnowledgeTestPoints] = useState(() => {
-        const storedKnowledgeTestPoints = localStorage.getItem('knowledgeTestPoints');
-        return storedKnowledgeTestPoints ? parseInt(storedKnowledgeTestPoints, 10) : 0;
+    const [testPoints, setTestPoints] = useState(() => {
+        const storedTestPoints = localStorage.getItem('testPoints');
+        return storedTestPoints ? parseInt(storedTestPoints, 10) : 0;
     });
 
 
     // Update local storage whenever totalpoints changes
     useEffect(() => {
-        localStorage.setItem('totalpoints', totalpoints.toString());
-    }, [totalpoints]);
+        localStorage.setItem('totalPoints', totalPoints.toString());
+    }, [totalPoints]);
 
     useEffect(() => {
-        localStorage.setItem('knowledgeTestPoints', knowledgeTestPoints.toString());
-    }, [knowledgeTestPoints]);
+        localStorage.setItem('testPoints', testPoints.toString());
+    }, [testPoints]);
     
-    const addKnowledgeTestPoints = (pointsToAdd) => {
-        setKnowledgeTestPoints((prevPoints) => prevPoints + pointsToAdd);
+    const addTestPoints = (pointsToAdd) => {
+        setTestPoints((prevPoints) => prevPoints + pointsToAdd);
     };
 
     // Function to add points to totalpoints
@@ -35,10 +35,10 @@ function useTotalPoints() {
 
      // Function to get total points across all activities
      const getTotalPoints = () => {
-        return knowledgeTestPoints + totalpoints;
+        return testPoints + totalPoints;
     };
 
-    return { knowledgeTestPoints, totalpoints, addKnowledgeTestPoints, getTotalPoints, addPoints };
+    return { testPoints, totalPoints, addTestPoints, getTotalPoints, addPoints };
 }
 
 export default useTotalPoints;

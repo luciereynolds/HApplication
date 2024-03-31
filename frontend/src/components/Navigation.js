@@ -10,6 +10,8 @@ const Navigation = () => {
     localStorage.removeItem('dataTypeLessonCompletion');
     localStorage.removeItem('lowLevelLessonCompletion');
     localStorage.removeItem('testingLessonCompletion');
+    localStorage.removeItem('totalPoints');
+    localStorage.removeItem('testPoints');
     // Redirect to login page or any other appropriate page
     window.location.href = '/';
   };
