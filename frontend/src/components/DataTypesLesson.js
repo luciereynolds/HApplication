@@ -1,30 +1,39 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import SortingLessonDTS from "./DataTypeContent/SortingLessonDTS";
 import DataTypeContent1 from "./DataTypeContent/DataTypeContent1";
 import DataTypeContent2 from "./DataTypeContent/DataTypeContent2";
 import DataTypeContent3 from "./DataTypeContent/DataTypeContent3";
 import DataTypeContent4 from "./DataTypeContent/DataTypeContent4";
 import TestComponent from "./DataTypeContent/KnowledgeTest";
-import ConfettiButton from "./ConfettiButton"; 
+import ConfettiButton from "./ConfettiButton";
 
-const Lessons = () => {
+const DataTypeLesson = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
+  const totalLessons = 6;
+
+  useEffect(() => {
+    // Retrieve completion status from local storage
+    const dataTypeLessonCompletionStatus = JSON.parse(localStorage.getItem("dataTypeLessonCompletion")) || 0;
+    setCurrentLessonIndex(dataTypeLessonCompletionStatus);
+  }, []);
 
   const handleNext = () => {
-    if (currentLessonIndex === totalLessons - 1) {
-      // If it's the last lesson, navigate back to the lessons page
+    const nextIndex = currentLessonIndex + 1;
+    if (nextIndex === totalLessons) {
       window.location.href = "/lessons";
     } else {
-      setCurrentLessonIndex((prevIndex) => prevIndex + 1);
+      setCurrentLessonIndex(nextIndex);
+      // Update completion status in local storage
+      localStorage.setItem("dataTypeLessonCompletion", JSON.stringify(nextIndex));
     }
   };
 
   const handleBack = () => {
-    setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
+    const prevIndex = Math.max(0, currentLessonIndex - 1);
+    setCurrentLessonIndex(prevIndex);
+    // Update completion status in local storage
+    localStorage.setItem("dataTypeLessonCompletion", JSON.stringify(prevIndex));
   };
-
-  const totalLessons = 6; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
 
@@ -54,7 +63,7 @@ const Lessons = () => {
           </div>
         </div>
         <div className="col">
-          {currentLessonIndex === totalLessons - 1 ? ( // Conditionally render ConfettiButton if it's the last lesson
+          {currentLessonIndex === totalLessons - 1 ? (
             <ConfettiButton />
           ) : (
             <button className="lesson-button" onClick={handleNext}>
@@ -67,4 +76,4 @@ const Lessons = () => {
   );
 };
 
-export default Lessons;
+export default DataTypeLesson;

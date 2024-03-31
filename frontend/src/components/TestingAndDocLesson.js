@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import TestingContent1 from "./TestingDocContent/TestingContent1";
 import TestingContent2 from "./TestingDocContent/TestingContent2";
 import WordConnectionTask from "./TestingDocContent/WordConnectionTask";
@@ -9,27 +8,36 @@ import TestingContent5 from "./TestingDocContent/TestingContent5";
 import TestingContent6 from "./TestingDocContent/TestingContent6";
 import ConfettiButton from "./ConfettiButton";
 
-const Lessons = () => {
+const TestingLesson = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
+  const totalLessons = 7;
+
+  useEffect(() => {
+    // Retrieve completion status from local storage
+    const testingLessonCompletionStatus = JSON.parse(localStorage.getItem("testingLessonCompletion")) || 0;
+    setCurrentLessonIndex(testingLessonCompletionStatus);
+  }, []);
 
   const handleNext = () => {
-    if (currentLessonIndex === totalLessons - 1) {
-      // If it's the last lesson, navigate back to the lessons page
+    const nextIndex = currentLessonIndex + 1;
+    if (nextIndex === totalLessons) {
       window.location.href = "/lessons";
     } else {
-      setCurrentLessonIndex((prevIndex) => prevIndex + 1);
+      setCurrentLessonIndex(nextIndex);
+      // Update completion status in local storage
+      localStorage.setItem("testingLessonCompletion", JSON.stringify(nextIndex));
     }
   };
 
   const handleBack = () => {
-    setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
+    const prevIndex = Math.max(0, currentLessonIndex - 1);
+    setCurrentLessonIndex(prevIndex);
+    // Update completion status in local storage
+    localStorage.setItem("testingLessonCompletion", JSON.stringify(prevIndex));
   };
 
-  const totalLessons = 7; // Set the total number of lessons
-
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
-  
-  // returns lesson content to be called in SortingLesson
+
   return (
     <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>
       <div className="row text-light" style={{ display: "flex", alignItems: "center", justifyContent: "center", textAlign: "center", backgroundColor: "#e978eb", borderRadius: "20px", padding: "1rem" }}>
@@ -57,7 +65,7 @@ const Lessons = () => {
           </div>
         </div>
         <div className="col">
-          {currentLessonIndex === totalLessons - 1 ? ( // Conditionally render ConfettiButton if it's the last lesson
+          {currentLessonIndex === totalLessons - 1 ? (
             <ConfettiButton />
           ) : (
             <button className="lesson-button" onClick={handleNext}>
@@ -70,4 +78,4 @@ const Lessons = () => {
   );
 };
 
-export default Lessons;
+export default TestingLesson;

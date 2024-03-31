@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 import LowLevelContent1 from "./LowLevelContent/LowLevelContent1";
 import LowLevelContent2 from "./LowLevelContent/LowLevelContent2";
 import LowLevelContent3 from "./LowLevelContent/LowLevelContent3";
@@ -11,21 +10,31 @@ import ConfettiButton from "./ConfettiButton";
 
 const LowLevelLesson = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
+  const totalLessons = 7;
+
+  useEffect(() => {
+    // Retrieve completion status from local storage
+    const lowLevelLessonCompletionStatus = JSON.parse(localStorage.getItem("lowLevelLessonCompletion")) || 0;
+    setCurrentLessonIndex(lowLevelLessonCompletionStatus);
+  }, []);
 
   const handleNext = () => {
-    if (currentLessonIndex === totalLessons - 1) {
-      // If it's the last lesson, navigate back to the lessons page
+    const nextIndex = currentLessonIndex + 1;
+    if (nextIndex === totalLessons) {
       window.location.href = "/lessons";
     } else {
-      setCurrentLessonIndex((prevIndex) => prevIndex + 1);
+      setCurrentLessonIndex(nextIndex);
+      // Update completion status in local storage
+      localStorage.setItem("lowLevelLessonCompletion", JSON.stringify(nextIndex));
     }
   };
 
   const handleBack = () => {
-    setCurrentLessonIndex((prevIndex) => Math.max(0, prevIndex - 1));
+    const prevIndex = Math.max(0, currentLessonIndex - 1);
+    setCurrentLessonIndex(prevIndex);
+    // Update completion status in local storage
+    localStorage.setItem("lowLevelLessonCompletion", JSON.stringify(prevIndex));
   };
-
-  const totalLessons = 7; // Set the total number of lessons
 
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
 
@@ -56,7 +65,7 @@ const LowLevelLesson = () => {
           </div>
         </div>
         <div className="col">
-          {currentLessonIndex === totalLessons - 1 ? ( // Conditionally render ConfettiButton if it's the last lesson
+          {currentLessonIndex === totalLessons - 1 ? (
             <ConfettiButton />
           ) : (
             <button className="lesson-button" onClick={handleNext}>
