@@ -5,7 +5,7 @@ import useTotalPoints from './useTotalPoints'; // Import the useTotalPoints hook
 const ConfettiButton = () => {
     const [animationComplete, setAnimationComplete] = useState(false); // State to track if animation is complete
     const { reward: confettiReward, isAnimating: isConfettiAnimating } = useReward('confettiReward', 'confetti');
-    const { totalpoints, addPoints } = useTotalPoints(); // Use object destructuring to get addPoints
+    const { addPoints } = useTotalPoints(); // Use object destructuring to get addPoints
 
 
     useEffect(() => {
