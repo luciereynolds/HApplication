@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
 const TranslationExercise = () => {
     const [inputValue, setInputValue] = useState("");
     const [, setIsCorrect] = useState(false);
+
+    const { addTestPoints } = useTotalPoints(); // Use object destructuring to get addTestPoints
 
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
@@ -13,6 +16,7 @@ const TranslationExercise = () => {
         if (inputValue === correctAnswer) {
             setIsCorrect(true);
             alert("Congratulations! You solved it!");
+            addTestPoints(25);
         } else {
             setIsCorrect(false);
             alert("Oops, that's not quite right. Remember to use the table for help!");

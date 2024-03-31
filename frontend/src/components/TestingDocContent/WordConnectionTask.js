@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
 function App() {
   const [correctMatches, setCorrectMatches] = useState([]);
-
+  const { addTestPoints } = useTotalPoints(); // Use object destructuring to get addTestPoints
   const handleDragStart = (event, item) => {
     // Set the data being dragged
     event.dataTransfer.setData("text/plain", item);
@@ -21,6 +22,7 @@ function App() {
     if (droppedItem === targetWord) {
       // Handle correct drop
       setCorrectMatches([...correctMatches, { word: targetWord, definition: targetDefinition }]);
+      addTestPoints(5);
     }
   };
 
