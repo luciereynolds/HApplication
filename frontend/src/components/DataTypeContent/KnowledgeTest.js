@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
 const KnowledgeTest = () => {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const { addKnowledgeTestPoints } = useTotalPoints(); // Use object destructuring to get addPoints
 
   const handleChange = (question, answer) => {
     setAnswers(prevAnswers => ({
@@ -13,6 +15,11 @@ const KnowledgeTest = () => {
 
   const handleSubmit = () => {
     setSubmitted(true);
+    const allCorrect = Object.keys(answers).every(question => isCorrect(question));
+    if (allCorrect) {
+      // Only add 25 points if all answers are correct
+      addKnowledgeTestPoints(25);
+    }
   };
 
   const handleRetry = () => {
@@ -20,7 +27,7 @@ const KnowledgeTest = () => {
     setSubmitted(false);
   };
 
-  const isCorrect = (question, selectedAnswer) => {
+  const isCorrect = (question) => {
     const correctAnswers = {
       "1. When you store data in a program, it is stored in a what?": "Variable",
       "2. Whole numbers are stored using what data type?": "Integer",
@@ -63,13 +70,6 @@ const KnowledgeTest = () => {
               <h5>{question}</h5>
               <p><strong>You said:</strong> {answers[question]}</p>
               <p>{isCorrect(question) ? 'Correct' : 'Incorrect'}</p>
-              {isCorrect(question) ? (
-                <p>
-                  {answers[question] === "Variable"}
-                  {answers[question] === "Integer"}
-                  {answers[question] === "String"}
-                </p>
-              ) : null}
             </div>
           ))}
           <button className="retry-button" onClick={handleRetry}>Retry</button>

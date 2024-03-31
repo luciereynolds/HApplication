@@ -3,11 +3,15 @@ import AllLessonsMedal from "../images/AllLessonsMedal.png";
 import DTSMedal from "../images/DTSMedal.png";
 import LLOMedal from "../images/LLOMedal.png";
 import TDSMedal from "../images/TDSMedal.png";
+import useTotalPoints from './useTotalPoints'; // Import the useTotalPoints hook
 
 const Leaderboard = () => {
   const [lowLevelLessonCompleted, setLowLevelLessonCompleted] = useState(false);
   const [dataTypeLessonCompleted, setDataTypeLessonCompleted] = useState(false);
   const [testingLessonCompleted, setTestingLessonCompleted] = useState(false);
+
+  // Fetch total points using the useTotalPoints hook
+  const { getTotalPoints } = useTotalPoints();
 
   useEffect(() => {
     // Retrieve completion status from local storage
@@ -30,6 +34,7 @@ const Leaderboard = () => {
           <div className="row">
             <div className="col-md">
               <h4>How well do you rank?</h4>
+              <p>Total Points: {getTotalPoints()}</p> {/* Display total points */}
             </div>
             <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem", textAlign: "center" }}>
               <h4>Your Achievements!🏅</h4>
