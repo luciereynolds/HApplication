@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import useUsername from './useUsername'; // Import the useUsername hook
 
 async function loginUser(credentials) {
   return fetch('http://localhost:3001/login', { 
@@ -17,6 +18,9 @@ export default function Login({ setToken }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null); // Initialize error state
 
+  // Use the useUsername hook
+  const [, setStoredUsername] = useUsername();
+
   const handleSubmit = async e => {
     e.preventDefault();
     const response = await loginUser({
@@ -27,6 +31,9 @@ export default function Login({ setToken }) {
     if (response.error) {
       setError('Incorrect username or password');
     } else if (response.token) { // Check if token property exists
+      // Set and store the username
+      setStoredUsername(username);
+      // Set the token in parent component state
       setToken(response.token);
       // Redirect to homepage after successful login
       window.location.href = '/'; 

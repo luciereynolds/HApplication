@@ -4,11 +4,14 @@ import DTSMedal from "../images/DTSMedal.png";
 import LLOMedal from "../images/LLOMedal.png";
 import TDSMedal from "../images/TDSMedal.png";
 import useTotalPoints from './useTotalPoints'; // Import the useTotalPoints hook
+import useUsername from './useUsername'; // Import the useUsername hook
 
 const Leaderboard = () => {
   const [lowLevelLessonCompleted, setLowLevelLessonCompleted] = useState(false);
   const [dataTypeLessonCompleted, setDataTypeLessonCompleted] = useState(false);
   const [testingLessonCompleted, setTestingLessonCompleted] = useState(false);
+
+  const [username] = useUsername();
 
   // Fetch total points using the useTotalPoints hook
   const { getTotalPoints } = useTotalPoints();
@@ -34,7 +37,7 @@ const Leaderboard = () => {
           <div className="row">
             <div className="col-md">
               <h4>How well do you rank?</h4>
-              <p>Total Points: {getTotalPoints()}</p> {/* Displays total amount of points user has */}
+              <p>{username}: {getTotalPoints()}</p> {/* Displays total amount of points user has. */}
             </div>
             <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem", textAlign: "center" }}>
               <h4>Your Achievements!🏅</h4>
