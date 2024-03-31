@@ -60,16 +60,22 @@ const Leaderboard = () => {
           <h3>Leaderboard 🏆</h3>
           <br></br>
           <div className="row">
-            <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem", textAlign: "center" }}>
-              <h4>How well do you rank?</h4>
-              {/* Display users sorted by points */}
-              {users.map((user, index) => (
-                <div key={index}>
-                  <p>{index + 1}. {user.name}: {user.points} points</p>
-                </div>
-              ))}
+            <div className="col-md p-3 mx-2 bg-light rounded shadow-sm">
+              <h4 className="mb-4">How well do you rank?</h4>
+              <div className="overflow-auto" style={{ maxHeight: "300px" }}>
+                {/* Display users sorted by points */}
+                {users.map((user, index) => (
+                  <div key={index} className={`py-2 ${index % 2 === 0 ? 'bg-white' : 'bg-light'}`}>
+                    <p className="m-0 d-flex justify-content-between align-items-center px-3">
+                      <span>{index + 1}. {user.name}</span>
+                      <span>{user.points} points</span>
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="col-md p-3 mx-2 text-dark" style={{ padding: "0.5rem", textAlign: "center" }}>
+
+            <div className="col-md p-3 mx-2 bg-light rounded shadow-sm" >
               <h4>Your Achievements!🏅</h4>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
                 {/* Display TopDog Medal if the user is at the top of the leaderboard */}
