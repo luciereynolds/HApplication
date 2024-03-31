@@ -67,84 +67,93 @@ const Leaderboard = () => {
                 {users.map((user, index) => (
                   <div key={index} className={`py-2 ${index % 2 === 0 ? 'bg-white' : 'bg-light'}`}>
                     <p className="m-0 d-flex justify-content-between align-items-center px-3">
-                      <span>{index + 1}. {user.name}</span>
-                      <span>{user.points} points</span>
+                      <span>
+                        {/* Display medal emojis for top 3 users */}
+                        {index === 0 && "🥇 "}
+                        {index === 1 && "🥈 "}
+                        {index === 2 && "🥉 "}
+                        {index > 2 && `${index + 1}. `}
+                        {user.name}
+                      </span>
+                      <span>{user.points}</span>
                     </p>
                   </div>
                 ))}
               </div>
             </div>
-
-            <div className="col-md p-3 mx-2 bg-light rounded shadow-sm" >
-              <h4>Your Achievements!🏅</h4>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
-                {/* Display TopDog Medal if the user is at the top of the leaderboard */}
-                {users.length > 0 && users[0].name === username && (
-                  <div>
-                    <img
-                      src={TopDogMedal}
-                      alt="Top Dog Medal for being number 1 on the leaderboard"
-                      style={{ width: "50%", height: "auto" }}
-                    />
-                    <p>Top Dog! You're no. 1!</p>
+  
+            <div className="col-md p-3 mx-2 bg-light rounded shadow-sm">
+              <div>
+                <h4>Your Achievements!🏅</h4>
+                {lowLevelLessonCompleted || dataTypeLessonCompleted || testingLessonCompleted ? (
+                  <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "20px" }}>
+                    {/* Display TopDog Medal if the user is at the top of the leaderboard */}
+                    {users.length > 0 && users[0].name === username && (
+                      <div>
+                        <img
+                          src={TopDogMedal}
+                          alt="Top Dog Medal for being number 1 on the leaderboard"
+                          style={{ width: "50%", height: "auto" }}
+                        />
+                        <p>Top Dog! You're no. 1!</p>
+                      </div>
+                    )}
+                    
+                    {/* Display other medals based on completion status */}
+                    {lowLevelLessonCompleted && (
+                      <div>
+                        <img
+                          src={LLOMedal}
+                          alt="Medal for completing Low Level Lesson"
+                          style={{ width: "50%", height: "auto" }}
+                        />
+                        <p>Completed Low Level Lesson!</p>
+                      </div>
+                    )}
+                    {dataTypeLessonCompleted && (
+                      <div>
+                        <img
+                          src={DTSMedal}
+                          alt="Medal for completing Data Type Lesson"
+                          style={{ width: "50%", height: "auto" }}
+                        />
+                        <p>Completed Data Types Lesson!</p>
+                      </div>
+                    )}
+                    {testingLessonCompleted && (
+                      <div>
+                        <img
+                          src={TDSMedal}
+                          alt="Medal for completing Testing Lesson"
+                          style={{ width: "50%", height: "auto" }}
+                        />
+                        <p>Completed Testing Lesson!</p>
+                      </div>
+                    )}
+                    {lowLevelLessonCompleted && dataTypeLessonCompleted && testingLessonCompleted && (
+                      <div>
+                        <img
+                          src={AllLessonsMedal}
+                          alt="Gold medal for completing all lessons"
+                          style={{ width: "50%", height: "auto" }}
+                        />
+                        <p>Completed all lessons!</p>
+                      </div>
+                    )}
                   </div>
-                )}
-
-                {/* Display Low Level Lesson Medal if completed */}
-                {lowLevelLessonCompleted && (
-                  <div>
-                    <img
-                      src={LLOMedal}
-                      alt="Medal for completing Low Level Lesson"
-                      style={{ width: "50%", height: "auto" }}
-                    />
-                    <p>Completed Low Level Lesson!</p>
-                  </div>
-                )}
-
-                {/* Display Data Type Lesson Medal if completed */}
-                {dataTypeLessonCompleted && (
-                  <div>
-                    <img
-                      src={DTSMedal}
-                      alt="Medal for completing Data Type Lesson"
-                      style={{ width: "50%", height: "auto" }}
-                    />
-                    <p>Completed Data Types Lesson!</p>
-                  </div>
-                )}
-
-                {/* Display Testing Lesson Medal if completed */}
-                {testingLessonCompleted && (
-                  <div>
-                    <img
-                      src={TDSMedal}
-                      alt="Medal for completing Testing Lesson"
-                      style={{ width: "50%", height: "auto" }}
-                    />
-                    <p>Completed Testing Lesson!</p>
-                  </div>
-                )}
-
-                {/* Display All Lessons Medal if all lessons completed */}
-                {lowLevelLessonCompleted && dataTypeLessonCompleted && testingLessonCompleted && (
-                  <div>
-                    <img
-                      src={AllLessonsMedal}
-                      alt="Gold medal for completing all lessons"
-                      style={{ width: "50%", height: "auto" }}
-                    />
-                    <p>Completed all lessons!</p>
-                  </div>
+                ) : (
+                  <p>No achievements yet. Start doing some lessons and earn points and medals! You'll get a medal for each lesson you complete!</p>
                 )}
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   );
+  
+
+
 };
 
 export default Leaderboard;
