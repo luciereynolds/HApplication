@@ -9,7 +9,7 @@ import BinaryCounter from "./LowLevelContent/BinaryCounter";
 import TranslationExercise from "./LowLevelContent/TranslationExercise";
 import ConfettiButton from "./ConfettiButton";
 
-const Lessons = () => {
+const LowLevelLesson = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
 
   const handleNext = () => {
@@ -69,4 +69,4 @@ const Lessons = () => {
   );
 };
 
-export default Lessons;
+export default LowLevelLesson;
