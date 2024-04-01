@@ -11,7 +11,7 @@ class FlipCounter extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.tick(), 1000); // Update every second
+    this.timerID = setInterval(() => this.tick(), 1000); // Ensures the counter updates every second
   }
 
   componentWillUnmount() {
@@ -22,7 +22,7 @@ class FlipCounter extends React.Component {
     const { binaryValues } = this.state;
     const newBinaryValues = [...binaryValues];
 
-    // Increment the binary representation
+    // Increments the binary representation
     for (let i = newBinaryValues.length - 1; i >= 0; i--) {
       if (newBinaryValues[i] === 0) {
         newBinaryValues[i] = 1;
@@ -32,7 +32,7 @@ class FlipCounter extends React.Component {
       }
     }
 
-    // Calculate the decimal number
+    // Calculates the decimal number corrolating to the binary number displayed.
     const decimalNumber = parseInt(newBinaryValues.join(''), 2);
 
     this.setState({
@@ -44,6 +44,8 @@ class FlipCounter extends React.Component {
   render() {
     const { binaryValues, decimalNumber } = this.state;
 
+    // returns the page with the title and the binary counter incrementing as soon as it loads.
+    // motion is utilised from framer motion to flip the numbers and animate them.
     return (
       <div className="container-fluid">
         <div className="row">
