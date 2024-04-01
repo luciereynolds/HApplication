@@ -1,5 +1,3 @@
-// UserDAO.js
-
 const Datastore = require("nedb");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -19,6 +17,7 @@ class UserDAO {
     }
 
     init() {
+        // initialise users already in database
         this.create('Peter', 'password1'); 
         this.create('Ann', 'password2');
         this.create('Lucie', 'password3');

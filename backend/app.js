@@ -8,7 +8,7 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 
-// Enable CORS for a specific origin (frontend domain)
+// Enable CORS for communication with the frontend
 app.use(cors({
   origin: 'http://localhost:3000'
 }));
@@ -16,25 +16,7 @@ app.use(cors({
 // Initialize UserDAO
 const userDAO = require('./models/UserDAO');
 
-// User registration route
-app.post('/register', async (req, res) => {
-    const { username, password } = req.body;
-    try {
-        // Check if username already exists
-        const existingUser = await userDAO.lookup(username);
-        if (existingUser) {
-            return res.status(400).json({ message: 'Username already exists' });
-        }
-        // Create user
-        await userDAO.create(username, password);
-        res.status(201).json({ message: 'User registered successfully' });
-    } catch (error) {
-        console.error('Error registering user:', error);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-});
-
-// User login route
+// User login route allows user to log in and assigns a JSON Web Token to ensure they can access restricted pages
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
