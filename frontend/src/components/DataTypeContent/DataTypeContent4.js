@@ -1,5 +1,8 @@
 import React from "react";
 
+// Data Type Content 4 discusses the boolean data type and discusses how it is either true or false.
+// Also talks about how it can be 1 or 0, yes or no, or, on or off.
+
 const DataTypeContent4 = () => {
     return (
         <div className="container-fluid">

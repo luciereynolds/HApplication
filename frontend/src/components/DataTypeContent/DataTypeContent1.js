@@ -1,5 +1,8 @@
 import React from "react";
 
+// Data Type Content 1, shows in DataTypesLesson. Discusses how data is stored in different data types
+// such as integer, string and boolean
+
 const DataTypeContent1 = () => {
     return (
         <div className="container-fluid">
@@ -14,6 +17,7 @@ const DataTypeContent1 = () => {
                         <li><b>String (characters)</b> such as names or postcodes. (Can also include phone numbers as Integers cannot start with <b>0</b>.</li>
                     </ul>
                     <p>In reference language you can declare a variable and its data type as follows:</p>
+                    {/* Shows how lines of code would look in a real world scenario using reference language  */}
                     <pre className="code-block">
                         <code className="language-code">
                             <span className="line-number">1</span>

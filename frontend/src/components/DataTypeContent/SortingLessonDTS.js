@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import SortableContainer from "../SortableFunctionality/SortableContainer";
 import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
+// initialises the items to be displayed in the sorting lesson and where they should be positioned
 const SortingLessonDTS = () => {
   const initialItems = {
     root: ['true', '2', '"Hello World!"', '"01414960999"', 'false', '362'],
@@ -10,10 +11,11 @@ const SortingLessonDTS = () => {
     container3: [],
   };
 
-  const { addTestPoints } = useTotalPoints(); // Use object destructuring to get addTestPoints
+  const { addTestPoints } = useTotalPoints();
 
   const [sortedItems, setSortedItems] = useState(initialItems);
 
+  // handles the submit for the user when they've finished sorting, ensures they're in the correct order.
   const handleSubmit = () => {
     const correctOrder = {
       root: [],
@@ -35,6 +37,7 @@ const SortingLessonDTS = () => {
       }
     }
 
+    // if sorted correctly, congrats message displayed and 25 points are added to testPoints.
     if (isCorrect) {
       alert("Congratulations! The items are sorted correctly.");
       addTestPoints(25);
@@ -43,6 +46,7 @@ const SortingLessonDTS = () => {
     }
   };
 
+  // renders the page with the heading and the instructions for the activity as well as column headings.
   return (
     <div className="container-fluid lesson-content-container">
       <div className="row" style={{ paddingTop: "20px" }}>
@@ -67,6 +71,7 @@ const SortingLessonDTS = () => {
           <h5 className="data-type-heading">Boolean</h5>
         </div>
       </div>
+      {/* displays the sorting content and submit button by using the other sortable container component */}
       <div className="row">
         <SortableContainer initialItems={initialItems} onSortChange={setSortedItems} />
       </div>

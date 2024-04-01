@@ -1,5 +1,8 @@
 import React from "react";
 
+// Data Type Content 3 discusses how text is stored using String. Demonstrates a variety of different types of string
+// to emphasise that number characters can also be stored, particularly like an address or phone number.
+
 const DataTypeContent3 = () => {
     return (
         <div className="container-fluid">

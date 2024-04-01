@@ -1,5 +1,8 @@
 import React from "react";
 
+// Data Type Content 2 describes how numbers are stored as integers. Discusses how entering the wrong type of 
+// data into a program can cause errors.
+
 const DataTypeContent2 = () => {
     return (
         <div className="container-fluid">
