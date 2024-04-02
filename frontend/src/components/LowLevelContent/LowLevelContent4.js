@@ -1,5 +1,6 @@
 import React from "react";
 
+// Low Level Content 4 discusses how text is stored using ASCII with the letter A as an example
 const LowLevelContent4 = () => {
 
     return (
@@ -15,7 +16,6 @@ const LowLevelContent4 = () => {
                     <p><b>A = 0100 0001</b></p>
                     <p>Each ASCII character is made up of eight bits in total but only uses seven of these bits to represent a character. One bit is used for error checking during transmission, this is known as a parity bit.</p>
                     <p>This means that ASCII code only allows for the representation of 128 characters. In order to represent more character sets, it is possible to use Unicode instead of ASCII. Unicode allows for the representation of up to 65, 536 characters.</p>
-
                 </div>
             </div>
         </div>

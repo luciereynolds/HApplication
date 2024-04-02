@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
+// Low Level Content 3 allows the user to interact with a binary table to create different 
+// representations of numbers
 const LowLevelContent3 = () => {
     // State to track the binary values and the currently hovered index
     const [binaryValues, setBinaryValues] = useState([0, 0, 0, 0, 1, 1, 0, 1]);
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
-    // Function to toggle between 0 and 1 when a cell is clicked
+    // Function that toggles between 0 and 1 when a cell is clicked
     const toggleBinaryValue = (index) => {
         const newBinaryValues = [...binaryValues];
         newBinaryValues[index] = newBinaryValues[index] === 0 ? 1 : 0;
@@ -17,11 +19,13 @@ const LowLevelContent3 = () => {
         return binaryValues.reduce((acc, value, index) => acc + value * Math.pow(2, 7 - index), 0);
     };
 
+    // styles the header of the table so it matches the previous example in Low Level Content 3
     const tableHeaderStyle = {
         backgroundColor: "#2eba68", // Set the background color to green
         color: "white", // Set the text color to white for better contrast
     };
 
+    // displays the instructions and the functional interactive table
     return (
         <div className="container-fluid">
             <div className="row">
@@ -41,6 +45,7 @@ const LowLevelContent3 = () => {
                         </colgroup>
                         <thead>
                             <tr>
+                                {/* calls the functions previously set up to change the binary value */}
                                 {[128, 64, 32, 16, 8, 4, 2, 1].map((value, index) => (
                                     <th
                                         key={index}

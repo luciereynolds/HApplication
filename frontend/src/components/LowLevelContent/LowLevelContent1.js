@@ -1,5 +1,6 @@
 import React from "react";
 
+// Low level content 1 displays an introduction to how computers store information in binary
 const LowLevelContent1 = () => {
     return (
         <div className="container-fluid">

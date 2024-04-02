@@ -1,11 +1,16 @@
 import React from "react";
 
+// Low Level Content 5 shows a list of ASCII codes in a table discussing how uppercase letters 
+// have a different code to lowercase.
 const LowLevelContent5 = () => {
+    
+    // styles the header of the table
     const tableHeaderStyle = {
         backgroundColor: "#2eba68", // Set the background color to green
         color: "white", // Set the text color to white for better contrast
     };
     
+    // styles an alternate header for the table to distinguish between columns
     const altTableHeaderStyle = {
         backgroundColor: "#258a4f",
         color: "white",
@@ -16,7 +21,7 @@ const LowLevelContent5 = () => {
             <div className="row">
                 <div className="col p-3 mx-2">
                     <p>Here is a table of ASCII codes:</p>
-                    <p>As you can see, capital letters have a different ASCII code to lowercase letters.</p>
+                    <p>As you can see, uppercase letters have a different ASCII code to lowercase letters.</p>
                     <table className="table table-bordered" style={{fontSize: "10pt"}}>
                         <thead>
                             <tr>

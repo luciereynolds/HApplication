@@ -1,9 +1,12 @@
 import React from "react";
 
+// low level content 2 discusses how binary representations of numbers are formed with an example of the number 13
 const LowLevelContent2 = () => {
+    
+    // styles the header of the table featured in the lesson content
     const tableHeaderStyle = {
-        backgroundColor: "#2eba68", // Set the background color to green
-        color: "white", // Set the text color to white for better contrast
+        backgroundColor: "#2eba68", // Sets the background color to green
+        color: "white", // Sets the text color to white for better contrast
     };
 
     return (

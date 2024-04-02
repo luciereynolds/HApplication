@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
+// Translation exercise asks the users to translate a sentence written in ASCII code, upon submitting, if correct
+// the user receives a congrats message and 25 points added to their total, if incorrect, user is gently reminded
+// that the table is there for them to use and to try again.
 const TranslationExercise = () => {
     const [inputValue, setInputValue] = useState("");
     const [, setIsCorrect] = useState(false);
