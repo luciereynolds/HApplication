@@ -1,12 +1,16 @@
 import React from "react";
 
+// returns testing content 2 which discusses an example of normal, extreme and exceptional data in context
+// of students test scores
 const TestingContent2 = () => {
 
+    // styles the table header
     const tableHeaderStyle = {
         backgroundColor: "#e978eb", // Set the background color to pink
         color: "white", // Set the text color to white for better contrast
     };
     
+    // styles the alt table header
     const altTableHeaderStyle = {
         backgroundColor: "#a253a3", // Sets background to darker pink for contrast between columns
         color: "white",

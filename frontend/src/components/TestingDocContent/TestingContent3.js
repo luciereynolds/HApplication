@@ -1,5 +1,7 @@
 import React from "react";
 
+// displays testing content 3 with information on making code readable with internal commentary
+// and meaningful identifiers
 const TestingContent3 = () => {
     return (
         <div className="container-fluid">

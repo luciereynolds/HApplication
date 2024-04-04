@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useTotalPoints from '../useTotalPoints'; // Import the useTotalPoints hook
 
+// returns the functionality of dragging and dropping the normal, extreme and exceptional data to 
+// the correct definition
 function App() {
   const [correctMatches, setCorrectMatches] = useState([]);
   const { addTestPoints } = useTotalPoints(); // Use object destructuring to get addTestPoints
@@ -30,6 +32,7 @@ function App() {
     return correctMatches.some(pair => pair.word === word && pair.definition === definition);
   };
 
+  // returns the word connection exercise with instructions
   return (
     <div className="App">
       <div className="container mt-5">

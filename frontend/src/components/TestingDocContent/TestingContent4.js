@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 
+// returns testing content 4 with examples of how internal commentary is used in a variety of
+// programming languages
 const TestingContent4 = () => {
     
     const tableHeaderStyle = {

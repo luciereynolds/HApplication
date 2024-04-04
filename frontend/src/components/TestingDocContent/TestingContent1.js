@@ -1,5 +1,6 @@
 import React from "react";
 
+// returns testing content 1 which discusses normal, extreme and exceptional data when testing
 const TestingContent1 = () => {
     return (
         <div className="container-fluid">

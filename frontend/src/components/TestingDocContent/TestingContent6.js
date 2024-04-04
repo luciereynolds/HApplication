@@ -1,5 +1,6 @@
 import React from "react";
 
+// testing content 6 discusses meaningful identifiers in code with examples
 const TestingContent6 = () => {
     return (
         <div className="container-fluid">
