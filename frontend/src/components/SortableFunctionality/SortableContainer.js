@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+// imports functions from dnd-kit
 import {
   DndContext,
   DragOverlay,
@@ -10,14 +12,17 @@ import {
 } from '@dnd-kit/core';
 import { arrayMove, sortableKeyboardCoordinates } from '@dnd-kit/sortable';
 
+// imports the container and item from container and sortable_item
 import Container from '../SortableFunctionality/container';
 import { Item } from '../SortableFunctionality/sortable_item';
 
+// styles wrapper
 const wrapperStyle = {
   display: 'flex',
   flexDirection: 'row',
 };
 
+// logs items that have been dragged and dropped to console
 const defaultAnnouncements = {
   onDragStart(id) {
     console.log(`Picked up draggable item ${id}.`);
@@ -43,6 +48,7 @@ const defaultAnnouncements = {
   },
 };
 
+// gets the coordinates for the item and mouse
 const SortableContainer = ({ initialItems, onSortChange }) => {
   const [items, setItems] = useState(initialItems);
   const [activeId, setActiveId] = useState();
@@ -54,6 +60,7 @@ const SortableContainer = ({ initialItems, onSortChange }) => {
     })
   );
 
+  // returns the containers with the items using dnd context
   return (
     <div style={wrapperStyle}>
       <DndContext

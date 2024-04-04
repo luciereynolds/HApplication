@@ -1,7 +1,10 @@
 import React from "react";
+
+// imports sortable functionality from dnd-kit
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
+// creates the item and styles each item
 export function Item(props) {
   const { id } = props;
 
@@ -22,6 +25,8 @@ export function Item(props) {
   return <div style={style}>{id}</div>;
 }
 
+// exports the function SortableItem which allows items to be moved, 
+// also styles the item depending on if it is being dragged
 export default function SortableItem(props) {
   const {
     attributes,
