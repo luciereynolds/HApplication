@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "../images/GamingHome.png";
 
+// returns the homepage with information about the site and a direct link to the lessons page
 const Home = () => {
   return (
     <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>

@@ -1,6 +1,7 @@
 import React from "react";
 
-// returns page directing users to log in
+// returns page directing users to log in if they try access a page that requires the user to 
+// be logged in
 const BlockedPage = () => {
   return (
     <div className="container-fluid" style={{ padding: "50px", paddingTop: "0px" }}>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useReward } from 'react-rewards';
 import useTotalPoints from './useTotalPoints'; // Import the useTotalPoints hook
 
+// returns the confetti button using react-rewards
 const ConfettiButton = () => {
     const [animationComplete, setAnimationComplete] = useState(false); // State to track if animation is complete
     const { reward: confettiReward, isAnimating: isConfettiAnimating } = useReward('confettiReward', 'confetti');
@@ -18,6 +19,7 @@ const ConfettiButton = () => {
         }
     }, [animationComplete, addPoints]);
 
+    // displays the button with finish displayed as the text to be displayed at the end of a lesson
     return (
         <button className='lesson-button'
             disabled={isConfettiAnimating}

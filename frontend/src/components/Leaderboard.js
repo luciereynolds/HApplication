@@ -7,6 +7,7 @@ import TopDogMedal from "../images/TopDogMedal.png";
 import useTotalPoints from './useTotalPoints'; // Import the useTotalPoints hook
 import useUsername from './useUsername'; // Import the useUsername hook
 
+// returns the leaderboard
 const Leaderboard = () => {
   const [lowLevelLessonCompleted, setLowLevelLessonCompleted] = useState(false);
   const [dataTypeLessonCompleted, setDataTypeLessonCompleted] = useState(false);

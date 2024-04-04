@@ -7,16 +7,20 @@ import DataTypeContent4 from "./DataTypeContent/DataTypeContent4";
 import TestComponent from "./DataTypeContent/KnowledgeTest";
 import ConfettiButton from "./ConfettiButton";
 
+// returns the data type lesson
 const DataTypeLesson = () => {
   const [currentLessonIndex, setCurrentLessonIndex] = useState(0);
+  
+  // assigns the number of sections of the lesson
   const totalLessons = 6;
 
   useEffect(() => {
-    // Retrieve completion status from local storage
+    // Retrieves completion status from local storage
     const dataTypeLessonCompletionStatus = JSON.parse(localStorage.getItem("dataTypeLessonCompletion")) || 0;
     setCurrentLessonIndex(dataTypeLessonCompletionStatus);
   }, []);
 
+  // handles the next function of the lessons and redirects to the lesson page when complete
   const handleNext = () => {
     const nextIndex = currentLessonIndex + 1;
     if (nextIndex === totalLessons) {
@@ -28,6 +32,7 @@ const DataTypeLesson = () => {
     }
   };
 
+  // handles the back function when completing sections
   const handleBack = () => {
     const prevIndex = Math.max(0, currentLessonIndex - 1);
     setCurrentLessonIndex(prevIndex);
@@ -35,6 +40,7 @@ const DataTypeLesson = () => {
     localStorage.setItem("dataTypeLessonCompletion", JSON.stringify(prevIndex));
   };
 
+  // returns the percentage of the way through the lesson the user currently is
   const progressPercentage = ((currentLessonIndex + 1) / totalLessons) * 100;
 
   return (
@@ -43,6 +49,7 @@ const DataTypeLesson = () => {
         <h3 style={{ margin: 0 }}>Data Types and Structures</h3>
       </div>
       <div className="row" style={{ height: "75vh", overflowY: "auto" }}>
+        {/* returns the section of the lesson depending on the index */}
         {currentLessonIndex === 0 && <DataTypeContent1 />}
         {currentLessonIndex === 1 && <DataTypeContent2 />}
         {currentLessonIndex === 2 && <DataTypeContent3 />}
@@ -52,6 +59,7 @@ const DataTypeLesson = () => {
       </div>
       <div className="row" style={{ textAlign: "center" }}>
         <div className="col">
+          {/* provides the next and back button */}
           <button className="lesson-button" onClick={handleBack} disabled={currentLessonIndex === 0}>
             Back
           </button>
