@@ -40,9 +40,13 @@ const Leaderboard = () => {
 
     // Simulate users with points
     const simulatedUsers = [
-      { name: 'Mark', points: 55 },
-      { name: 'Craig', points: 25 },
-      { name: 'Oliver', points: 100 },
+      { name: 'Sophia', points: 55 },
+      { name: 'Benjamin', points: 25 },
+      { name: 'James', points: 100 },
+      { name: 'Charlotte', points: 200},
+      { name: 'Ahmed', points: 130},
+      { name: 'Fatima', points: 70},
+      { name: 'Ana', points: 40},
       { name: username, points: getTotalPoints() }, // Include logged-in user
     ];
 
