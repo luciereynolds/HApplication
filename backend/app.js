@@ -9,8 +9,11 @@ const app = express();
 app.use(bodyParser.json());
 
 // Allow requests from Vercel frontend
-const allowedOrigins = ['https://h-application-luciereynolds-projects.vercel.app/'];
-app.use(cors());
+const corsOptions = {
+    origin: 'https://h-application-luciereynolds-projects.vercel.app/',
+  };
+  
+  app.use(cors(corsOptions));
 // Initialize UserDAO
 const userDAO = require('./models/UserDAO');
 
