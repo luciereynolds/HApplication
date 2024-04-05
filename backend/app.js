@@ -8,11 +8,17 @@ const cors = require('cors');
 const app = express();
 app.use(bodyParser.json());
 
-// Enable CORS for communication with the frontend
+// Allow requests from Vercel frontend
+const allowedOrigins = ['https://h-application-luciereynolds-projects.vercel.app'];
 app.use(cors({
-  origin: 'https://h-application.vercel.app/'
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
-
 // Initialize UserDAO
 const userDAO = require('./models/UserDAO');
 
