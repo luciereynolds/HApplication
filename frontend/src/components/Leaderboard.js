@@ -46,7 +46,6 @@ const Leaderboard = () => {
       { name: 'Charlotte', points: 200},
       { name: 'Ahmed', points: 130},
       { name: 'Fatima', points: 70},
-      { name: 'Ana', points: 40},
       { name: username, points: getTotalPoints() }, // Include logged-in user
     ];
 
