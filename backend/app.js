@@ -22,6 +22,10 @@ app.use(cors({
 // Initialize UserDAO
 const userDAO = require('./models/UserDAO');
 
+app.get('/', (req, res) => {
+    res.send('Backend is running');
+  });
+  
 // User login route allows user to log in and assigns a JSON Web Token to ensure they can access restricted pages
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
