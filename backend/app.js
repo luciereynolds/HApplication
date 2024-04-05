@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Allow requests from Vercel frontend
-const allowedOrigins = ['https://h-application-luciereynolds-projects.vercel.app'];
+const allowedOrigins = ['https://h-application-luciereynolds-projects.vercel.app/'];
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
