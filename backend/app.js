@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 
 // Enable CORS for communication with the frontend
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'https://h-application.vercel.app/'
 }));
 
 // Initialize UserDAO
