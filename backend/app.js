@@ -10,22 +10,14 @@ app.use(bodyParser.json());
 
 // Allow requests from Vercel frontend
 const allowedOrigins = ['https://h-application-luciereynolds-projects.vercel.app/'];
-app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+app.use(cors());
 // Initialize UserDAO
 const userDAO = require('./models/UserDAO');
 
 app.get('/', (req, res) => {
     res.send('Backend is running');
   });
-  
+
 // User login route allows user to log in and assigns a JSON Web Token to ensure they can access restricted pages
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
