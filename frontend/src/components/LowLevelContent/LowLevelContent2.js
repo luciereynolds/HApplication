@@ -53,14 +53,14 @@ const LowLevelContent2 = () => {
                     </table>
                     <p>So as you can see from the binary table above, the binary representation
                         for 13 is <b>00001101</b>. If you ignore the 0s and look at where we have 1s, you can see
-                        we have 1s in the <b>8</b>, <b>2</b>, and <b>1</b> column. To work out what decimal number we 
+                        we have 1s in the <b>8</b>, <b>4</b>, and <b>1</b> column. To work out what decimal number we 
                         are storing we just add these numbers together.
                     </p>
                     <p>
                     So...
                     </p>
                     <h5 style={{textAlign: "center"}}>
-                        00001101 = 8 + 2 + 1 = 13
+                        00001101 = 8 + 4 + 1 = 13
                     </h5>
                 </div>
             </div>
